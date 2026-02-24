@@ -24,7 +24,7 @@ body {
 header nav {
     display: flex;
     justify-content: space-between;
-    padding: 3rem 18%; /* Narrowed to match cards */
+    padding: 3rem 18%;
     font-weight: 700;
 }
 
@@ -34,11 +34,11 @@ header nav {
     color: var(--text-light);
 }
 
-/* Hero & Info Cards */
-.hero-card, .info-card {
+/* Hero Card - Vertically Centered Layout */
+.hero-card {
     background: var(--card-anthropic);
     color: var(--text-main);
-    margin: 2rem 18% !important; /* Forced narrow width */
+    margin: 2rem 18%;
     padding: 4rem;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.8);
@@ -47,15 +47,23 @@ header nav {
 .hero-layout {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Aligns headshot with name top */
+    align-items: center; /* This centers the text and image vertically */
     gap: 4rem;
 }
 
-.hero-text { flex: 1; }
+.hero-text {
+    flex: 1.5;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
 
 .hero-image img {
-    width: 260px;
-    height: 260px;
+    width: 280px;
+    height: 280px;
     border-radius: 30px; /* Rounded angled square */
     object-fit: cover;
     border: 3px solid var(--accent-orange);
@@ -63,7 +71,7 @@ header nav {
 }
 
 h1 {
-    font-size: 5.5rem;
+    font-size: 5.2rem;
     margin: 0;
     letter-spacing: -2px;
     line-height: 1.1;
@@ -73,16 +81,17 @@ h1 {
     color: var(--accent-orange);
     font-size: 1.8rem;
     font-weight: 700;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .bio {
-    font-size: 1.8rem;
-    max-width: 800px;
+    font-size: 1.7rem;
+    max-width: 650px;
 }
 
+/* Content Sections */
 .section-container {
-    padding: 0 18%; /* Consistent narrowing */
+    padding: 0 18%;
 }
 
 .section-title {
@@ -94,7 +103,12 @@ h1 {
 }
 
 .info-card {
-    margin: 1rem 0 4rem 0 !important;
+    background: var(--card-anthropic);
+    color: var(--text-main);
+    padding: 4rem;
+    border-radius: 16px;
+    margin: 1rem 0 4rem 0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 .entry h3 {
