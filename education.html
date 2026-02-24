@@ -1,106 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Education — Jiaming Sun</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Jiaming Sun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="vectorField"></canvas>
 
-<div class="geo-orb"></div>
-<div class="line-accent line-accent-v"></div>
-<div class="line-accent line-accent-v2"></div>
+    <header>
+        <nav>
+            <div class="nav-left"><a href="index.html" style="text-decoration:none; color:inherit;">Jiaming Sun</a></div>
+            <div class="nav-right">
+                <a href="education.html" class="active">Education</a>
+                <a href="research.html">Research</a>
+                <a href="experience.html">Experience</a>
+            </div>
+        </nav>
+    </header>
 
-<nav>
-  <a class="nav-logo" href="index.html">Jiaming Sun</a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-    <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-  </button>
-  <div class="nav-right">
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="education.html" class="active">Education</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="experience.html">Experience</a></li>
-    </ul>
-  </div>
-</nav>
+    <main class="roadmap-container">
+        <h2 class="section-title">Educational Roadmap</h2>
 
-<main>
-  <a href="index.html" class="back-link">
-    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-    Back to home
-  </a>
+        <div class="roadmap-item">
+            <div class="roadmap-dot"></div>
+            <div class="info-card">
+                <div class="edu-header">
+                    <img src="washu_seal.png" alt="WashU Seal" class="school-logo">
+                    <div>
+                        <p class="edu-meta">2023 – 2027</p>
+                        <h3>Washington University in St. Louis</h3>
+                    </div>
+                </div>
+                <p class="edu-degree">B.S. Biomedical Engineering</p>
+                <p class="edu-details">Minors in Biomedical Data Science & Business Strategy. Dean's List Fall 2024, Spring 2025.</p>
+            </div>
+        </div>
 
-  <div class="page-header">
-    <div class="accent-bar"></div>
-    <h1>Education</h1>
-    <p>From Beijing to Providence to St. Louis — a path through engineering, science, and the liberal arts.</p>
-  </div>
+        <div class="roadmap-item">
+            <div class="roadmap-dot"></div>
+            <div class="info-card">
+                <div class="edu-header">
+                    <img src="pennstate_logo.png" alt="Penn State Logo" class="school-logo">
+                    <div>
+                        <p class="edu-meta">May 2025 – Aug 2025</p>
+                        <h3>Penn State University</h3>
+                    </div>
+                </div>
+                <p class="edu-degree">Research Internship — Biomedical Acoustics (BASiL Lab)</p>
+                <p class="edu-details">Focus on high-frame-rate Doppler ultrasound for deep vein thrombosis delineation.</p>
+            </div>
+        </div>
 
-  <!--
-    HOW TO ADD SCHOOL LOGOS:
-    1. Save logo images into the "images/" folder: washu-logo.png, pennstate-logo.png, brown-logo.png, rdfz-logo.png
-    2. Replace each <div class="edu-logo-placeholder">...</div> with:
-       <img class="edu-logo" src="images/washu-logo.png" alt="WashU" />
-  -->
+        <div class="roadmap-item">
+            <div class="roadmap-dot"></div>
+            <div class="info-card">
+                <div class="edu-header">
+                    <img src="brown_logo.png" alt="Brown University Logo" class="school-logo">
+                    <div>
+                        <p class="edu-meta">Jul 2022 – Aug 2022</p>
+                        <h3>Brown University</h3>
+                    </div>
+                </div>
+                <p class="edu-degree">Pre-College Certificate — Environmental Toxicology</p>
+                <p class="edu-details">Studied physiological impacts of toxins within a rigorous research environment.</p>
+            </div>
+        </div>
 
-  <div class="card" style="animation-delay: 0.05s;">
-    <div class="edu-entry">
-      <div class="edu-logo-placeholder">WashU</div>
-      <div>
-        <p class="edu-school">Washington University in St. Louis</p>
-        <p class="edu-degree">B.S. Biomedical Engineering · Minor in Biomedical Data Science &amp; Business Strategy</p>
-        <p class="edu-period">Sep 2023 – May 2027 · Dean's List Fall 2024, Spring 2025</p>
-      </div>
-    </div>
+        <div class="roadmap-item">
+            <div class="roadmap-dot"></div>
+            <div class="info-card">
+                <div class="edu-header">
+                    <img src="rdfz_logo.png" alt="RDFZ Logo" class="school-logo">
+                    <div>
+                        <p class="edu-meta">2020 – 2023</p>
+                        <h3>The High School Affiliated to Renmin University of China (RDFZ)</h3>
+                    </div>
+                </div>
+                <p class="edu-degree">High School Diploma · Science Track</p>
+                <p class="edu-details">Beijing, China. Filed two patents for solar-powered PEM electrolyzers.</p>
+            </div>
+        </div>
+    </main>
 
-    <div class="edu-entry">
-      <div class="edu-logo-placeholder">Penn<br>State</div>
-      <div>
-        <p class="edu-school">Penn State University</p>
-        <p class="edu-degree">Research Internship — Biomedical Acoustics (BASiL Lab)</p>
-        <p class="edu-period">May – Aug 2025</p>
-      </div>
-    </div>
-
-    <div class="edu-entry">
-      <div class="edu-logo-placeholder">Brown</div>
-      <div>
-        <p class="edu-school">Brown University</p>
-        <p class="edu-degree">Pre-College Certificate — Environmental Toxicology</p>
-        <p class="edu-period">Jul – Aug 2022</p>
-      </div>
-    </div>
-
-    <div class="edu-entry">
-      <div class="edu-logo-placeholder">RDFZ</div>
-      <div>
-        <p class="edu-school">The High School Affiliated to Renmin University of China (RDFZ)</p>
-        <p class="edu-degree">High School Diploma · Math, Physics, Chemistry, Environmental Science</p>
-        <p class="edu-period">Sep 2020 – Jun 2023 · Beijing, China</p>
-        <p class="edu-degree" style="margin-top:0.25rem; font-size:0.88rem;">2 patents filed during high school on solar-powered PEM electrolyzers</p>
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-left">
-      <div class="footer-dot"></div>
-      <p class="footer-text">Jiaming Sun · St. Louis, MO</p>
-    </div>
-    <div class="footer-links">
-      <a href="education.html">Education</a>
-      <a href="research.html">Research</a>
-      <a href="experience.html">Experience</a>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+    <footer>
+        <div class="footer-wrap">
+            <span>Jiaming Sun</span>
+            <span>St. Louis, MO</span>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
