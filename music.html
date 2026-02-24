@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music — Jiaming Sun</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="geo-orb"></div>
+<div class="line-accent line-accent-v"></div>
+<div class="line-accent line-accent-v2"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Jiaming Sun</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </button>
+  <div class="nav-right">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="music.html" class="active">Music</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"></button>
+  </div>
+</nav>
+
+<main>
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Back to home
+  </a>
+
+  <div class="page-header">
+    <div class="accent-bar"></div>
+    <h1>Music</h1>
+    <p>Electric guitar, blues rock, and the band. Also where I keep my favorite albums and guitars.</p>
+  </div>
+
+  <!-- The Band -->
+  <div class="card" style="animation-delay: 0.05s;">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      </div>
+      <span class="section-title">The Half-Body Harp</span>
+    </div>
+    <p style="font-size: 1.05rem; color: var(--ink-mid); line-height: 1.8; margin-bottom: 1rem;">
+      Co-founded a four-member blues rock ensemble at WashU. I'm the lead guitarist, arranger, and composer. We blend classic blues licks with electric textures and acoustic passages. We've headlined two independent concerts and performed at multiple campus showcases.
+    </p>
+    <p style="font-size: 0.95rem; color: var(--ink-soft);">
+      Playing electric guitar since 2020. Influences range from Stevie Ray Vaughan and B.B. King to John Mayer and Gary Clark Jr.
+    </p>
+  </div>
+
+  <!-- Favorite Albums -->
+  <div class="card" style="animation-delay: 0.12s;">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5zm0-5.5c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"/></svg>
+      </div>
+      <span class="section-title">Favorite Albums</span>
+    </div>
+    <p style="font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 1.5rem;">A living list — add your favorite albums here later.</p>
+
+    <div class="album-grid">
+      <!-- 
+        TO ADD ALBUMS:
+        1. Save album cover images to images/ folder
+        2. Replace the placeholder div with:
+           <div class="album-cover"><img src="images/album-name.jpg" alt="Album Name" /></div>
+        3. Update the title and artist text below
+      -->
+      <div class="album-card">
+        <div class="album-cover">Album art</div>
+        <p class="album-title">Album Title</p>
+        <p class="album-artist">Artist Name</p>
+      </div>
+      <div class="album-card">
+        <div class="album-cover">Album art</div>
+        <p class="album-title">Album Title</p>
+        <p class="album-artist">Artist Name</p>
+      </div>
+      <div class="album-card">
+        <div class="album-cover">Album art</div>
+        <p class="album-title">Album Title</p>
+        <p class="album-artist">Artist Name</p>
+      </div>
+      <div class="album-card">
+        <div class="album-cover">Album art</div>
+        <p class="album-title">Album Title</p>
+        <p class="album-artist">Artist Name</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- My Guitars -->
+  <div class="card" style="animation-delay: 0.19s;">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3l-6 6-2-2-6 6V17h4l6-6-2-2 6-6V3z"/></svg>
+      </div>
+      <span class="section-title">My Guitars</span>
+    </div>
+    <p style="font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 1.5rem;">Add your guitars here — include photos, models, and stories behind each one.</p>
+
+    <div class="guitar-grid">
+      <!-- 
+        TO ADD GUITARS:
+        Add a photo inside the guitar-item div, e.g.:
+        <img src="images/guitar1.jpg" alt="Guitar Name" style="width:100%; border-radius:8px; margin-bottom:0.75rem;" />
+      -->
+      <div class="guitar-item">
+        <h3>Guitar #1</h3>
+        <p>Model, year, and the story behind it.</p>
+      </div>
+      <div class="guitar-item">
+        <h3>Guitar #2</h3>
+        <p>Model, year, and the story behind it.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-dot"></div>
+      <p class="footer-text">Jiaming Sun · <a href="/cdn-cgi/l/email-protection#593330383430373e772a192e2c2a2d35773c3d2c"><span class="__cf_email__" data-cfemail="563c3f373b3f3831782516212325223a78333223">[email&#160;protected]</span></a> · St. Louis, MO</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="experience.html">Experi
