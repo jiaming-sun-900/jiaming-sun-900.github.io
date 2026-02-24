@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jiaming Sun | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <canvas id="vectorField"></canvas>
-
     <header>
         <nav>
             <div class="nav-left">Jiaming Sun</div>
@@ -21,7 +20,7 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero-card">
             <div class="hero-content">
                 <h1>Jiaming Sun</h1>
                 <p class="sub-headline">WashU 2027 · Biomedical Engineering · Beijing → St. Louis</p>
@@ -36,12 +35,12 @@
             </div>
         </section>
 
-        <section class="content-grid">
-            <div class="section-block">
-                <h2 class="section-label">Currently</h2>
+        <section class="section-container">
+            <h2 class="section-title">Currently</h2>
+            <div class="info-card">
                 <div class="entry">
                     <h3>Researcher at Chen Ultrasound Lab, WashU</h3>
-                    <p>Developing lipid-shell nanobubbles as contrast agents for cerebrospinal fluid ultrasound imaging and exploring ultrasound neuromodulation for therapeutic applications.</p>
+                    <p>Developing lipid-shell nanobubbles as contrast agents for cerebrospinal fluid ultrasound imaging and exploring ultrasound neuromodulation.</p>
                 </div>
                 <div class="entry">
                     <h3>Healthcare Consultant at WashU Global Health Center</h3>
@@ -49,8 +48,8 @@
                 </div>
             </div>
 
-            <div class="section-block">
-                <h2 class="section-label">Previously</h2>
+            <h2 class="section-title">Previously</h2>
+            <div class="info-card">
                 <div class="entry">
                     <h3>Penn State BASiL Lab</h3>
                     <p>High-frame-rate Doppler ultrasound for deep vein thrombosis delineation under AHA-sponsored research.</p>
@@ -61,11 +60,9 @@
 
     <footer>
         <div class="footer-wrap">
-            <span class="footer-name">Jiaming Sun</span>
-            <span class="footer-loc">St. Louis, MO</span>
+            <span>Jiaming Sun</span>
+            <span>St. Louis, MO</span>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
