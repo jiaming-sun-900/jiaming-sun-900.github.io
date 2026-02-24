@@ -11,13 +11,11 @@ body {
     color: var(--text-light);
     font-family: 'Libre Baskerville', serif;
     margin: 0;
-    line-height: 1.6;
 }
 
 #vectorField {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     z-index: -1;
 }
 
@@ -39,7 +37,7 @@ header nav {
     background: var(--card-anthropic);
     color: var(--text-main);
     margin: 2rem 18%;
-    padding: 5rem 4rem; /* More vertical breathing room */
+    padding: 5rem 4rem;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
@@ -47,28 +45,38 @@ header nav {
 .hero-layout {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertical alignment */
+    align-items: center; /* Vertical Center */
     gap: 4rem;
 }
 
-.hero-text {
-    flex: 1.6; /* Balanced text width */
-}
+.hero-text { flex: 1.6; }
 
+/* Centering the Headshot in the "Blank Area" */
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: center; /* Horizontally centers the image in the right half */
+    justify-content: center; /* Horizontal Center in its area */
+    position: relative;
+    width: 300px;
+    height: 300px;
 }
 
 .hero-image img {
-    width: 300px; /* Slightly larger for better impact */
+    width: 300px;
     height: 300px;
-    border-radius: 35px; /* Premium rounded square */
+    border-radius: 35px; /* Rounded angled square */
     object-fit: cover;
     border: 3px solid var(--accent-orange);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    position: absolute;
+    transition: opacity 0.6s ease-in-out, transform 0.4s ease;
+    cursor: pointer;
 }
+
+/* Hover Swap Logic */
+.img-back { opacity: 0; }
+.hero-image:hover .img-front { opacity: 0; }
+.hero-image:hover .img-back { opacity: 1; }
+.hero-image:hover img { transform: scale(1.02); }
 
 h1 {
     font-size: 5.5rem;
@@ -85,15 +93,12 @@ h1 {
 }
 
 .bio {
-    font-size: 1.8rem;
-    max-width: 680px;
+    font-size: 1.7rem;
+    max-width: 650px;
 }
 
-/* Narrowed Content Sections */
-.section-container {
-    padding: 0 18%;
-}
-
+/* Rest of Content */
+.section-container { padding: 0 18%; }
 .section-title {
     color: var(--text-light);
     margin: 4.5rem 0 1.2rem 0;
@@ -108,38 +113,17 @@ h1 {
     padding: 4rem;
     border-radius: 16px;
     margin-bottom: 4rem;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
-.entry h3 {
-    font-size: 2.1rem;
-    margin: 0 0 0.5rem 0;
-}
-
-.entry p {
-    font-size: 1.5rem;
-    color: #222;
-}
-
-.links {
-    margin-top: 2.5rem;
-}
+.entry h3 { font-size: 2.1rem; margin-bottom: 0.5rem; }
+.entry p { font-size: 1.4rem; color: #222; }
 
 .links a {
     font-size: 1.4rem;
     margin-right: 2rem;
     color: var(--text-main);
     font-weight: 700;
-    text-decoration: underline;
 }
 
-footer {
-    padding: 6rem 18%;
-    border-top: 1px solid #333;
-    opacity: 0.8;
-}
-
-.footer-wrap {
-    display: flex;
-    justify-content: space-between;
-}
+footer { padding: 6rem 18%; border-top: 1px solid #333; opacity: 0.8; }
+.footer-wrap { display: flex; justify-content: space-between; }
