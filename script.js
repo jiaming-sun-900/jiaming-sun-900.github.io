@@ -18,22 +18,21 @@ if (canvas) {
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const spacing = 50;
+        const spacing = 55;
         ctx.strokeStyle = '#FF4500';
-        ctx.lineWidth = 1.5;
+        ctx.lineWidth = 1.2;
 
         for (let x = spacing / 2; x < canvas.width; x += spacing) {
             for (let y = spacing / 2; y < canvas.height; y += spacing) {
-                const dx = mouse.x - x;
-                const dy = mouse.y - y;
-                const angle = Math.atan2(dy, dx);
+                const angle = Math.atan2(mouse.y - y, mouse.x - x);
                 
                 ctx.save();
                 ctx.translate(x, y);
                 ctx.rotate(angle);
                 ctx.beginPath();
-                ctx.moveTo(-8, 0);
-                ctx.lineTo(8, 0);
+                ctx.moveTo(-7, 0);
+                ctx.lineTo(7, 0);
+                ctx.lineTo(4, -3); // Engineering arrow head
                 ctx.stroke();
                 ctx.restore();
             }
