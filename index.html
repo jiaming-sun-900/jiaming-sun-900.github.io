@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jiaming Sun | WashU BME</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiaming Sun | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="vectorField"></canvas>
 
-<nav>
-  <a class="nav-logo" href="index.html">Jiaming Sun</a>
-  <ul class="nav-links">
-    <li><a href="education.html">Education</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="experience.html">Experience</a></li>
-  </ul>
-</nav>
+    <header>
+        <nav>
+            <div class="nav-left">Jiaming Sun</div>
+            <div class="nav-right">
+                <a href="education.html">Education</a>
+                <a href="research.html">Research</a>
+                <a href="experience.html">Experience</a>
+            </div>
+        </nav>
+    </header>
 
-<main>
-  <header class="hero">
-    <h1 class="hero-name">Jiaming<br>Sun</h1>
-    <p class="hero-tagline">WashU 2027 · Biomedical Engineering · Beijing → St. Louis</p>
-    <p class="hero-bio">
-      Third-year BME student at Washington University in St. Louis. I study how sound reveals what other tools cannot — from nanobubbles in cerebrospinal fluid to deep vein thrombosis delineation.
-    </p>
-    
-    <div class="social-row" style="display:flex; gap: 2rem; font-family: 'DM Sans', sans-serif; font-weight: 700;">
-      <a href="https://www.linkedin.com/in/jiaming-sun-8a18ba297/" style="color: black; text-decoration: none; border-bottom: 2px solid var(--orange);">LinkedIn</a>
-      <a href="https://github.com/jiaming-sun-900" style="color: black; text-decoration: none; border-bottom: 2px solid var(--orange);">GitHub</a>
-    </div>
-  </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Jiaming Sun</h1>
+                <p class="sub-headline">WashU 2027 · Biomedical Engineering · Beijing → St. Louis</p>
+                <p class="bio">
+                    Third-year BME student at Washington University in St. Louis. I study how sound reveals what other tools cannot from nanobubbles in cerebrospinal fluid to deep vein thrombosis delineation.
+                </p>
+                <div class="links">
+                    <a href="https://linkedin.com">LinkedIn</a>
+                    <a href="https://github.com/jiaming-sun-900">GitHub</a>
+                    <a href="mailto:jiaming.s@wustl.edu">jiaming.s@wustl.edu</a>
+                </div>
+            </div>
+        </section>
 
-  <section class="section">
-    <span class="section-label">Currently</span>
-    <div class="content-grid">
-      <div class="content-item">
-        <div class="item-title">Researcher — Chen Ultrasound Lab, WashU</div>
-        <div class="item-desc">Developing lipid-shell nanobubbles as contrast agents for cerebrospinal fluid ultrasound imaging; exploring ultrasound neuromodulation for therapeutic applications.</div>
-      </div>
-      <div class="content-item">
-        <div class="item-title">Healthcare Consultant — WashU Global Health Center</div>
-        <div class="item-desc">Advising on public health priorities; leading strategic planning for Global Health Week and the Annual Conference.</div>
-      </div>
-    </div>
-  </section>
+        <section class="content-grid">
+            <div class="section-block">
+                <h2 class="section-label">Currently</h2>
+                <div class="entry">
+                    <h3>Researcher at Chen Ultrasound Lab, WashU</h3>
+                    <p>Developing lipid-shell nanobubbles as contrast agents for cerebrospinal fluid ultrasound imaging and exploring ultrasound neuromodulation for therapeutic applications.</p>
+                </div>
+                <div class="entry">
+                    <h3>Healthcare Consultant at WashU Global Health Center</h3>
+                    <p>Advising on public health priorities and leading strategic planning for Global Health Week and the Annual Conference.</p>
+                </div>
+            </div>
 
-  <section class="section">
-    <span class="section-label">Previously</span>
-    <div class="content-grid">
-      <div class="content-item">
-        <div class="item-title">Penn State BASiL Lab</div>
-        <div class="item-desc">High-frame-rate Doppler ultrasound for deep vein thrombosis delineation. AHA-sponsored research.</div>
-      </div>
-      <div class="content-item">
-        <div class="item-title">WashU Ding Lab</div>
-        <div class="item-desc">Spatial transcriptomics and cancer genomics researcher. Worked with single-cell sequencing.</div>
-      </div>
-    </div>
-  </section>
-</main>
+            <div class="section-block">
+                <h2 class="section-label">Previously</h2>
+                <div class="entry">
+                    <h3>Penn State BASiL Lab</h3>
+                    <p>High-frame-rate Doppler ultrasound for deep vein thrombosis delineation under AHA-sponsored research.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer>
-  <div class="footer-text">Jiaming Sun</div>
-  <div class="footer-text">St. Louis, MO</div>
-</footer>
+    <footer>
+        <div class="footer-wrap">
+            <span class="footer-name">Jiaming Sun</span>
+            <span class="footer-loc">St. Louis, MO</span>
+        </div>
+    </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
