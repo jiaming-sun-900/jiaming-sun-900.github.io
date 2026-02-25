@@ -1,10 +1,52 @@
+:root {
+    --bg-deep-black: #0A0A0A;
+    --card-anthropic: #F9F6F0;
+    --text-main: #1A1A1A;
+    --text-light: #FDFCF8;
+    --accent-orange: #FF4F00;
+}
+
+body {
+    background-color: var(--bg-deep-black);
+    color: var(--text-light);
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#vectorField {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: -1;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 18%;
+    font-weight: 700;
+}
+
+.nav-right a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.section-title {
+    color: var(--text-light);
+    margin: 4.5rem 0 1.2rem 0;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
 /* --- Roadmap Styling --- */
 .roadmap-container {
     padding: 2rem 18% 8rem 18%;
     position: relative;
 }
 
-/* Vertical Track */
 .roadmap-container::before {
     content: '';
     position: absolute;
@@ -19,7 +61,7 @@
 .roadmap-item {
     display: flex;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 3.5rem;
     margin-bottom: 3rem;
     position: relative;
     z-index: 1;
@@ -35,10 +77,18 @@
     flex-shrink: 0;
 }
 
+.info-card {
+    background: var(--card-anthropic);
+    color: var(--text-main);
+    padding: 3rem;
+    border-radius: 16px;
+    width: 100%;
+}
+
 .edu-header {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     margin-bottom: 1.5rem;
 }
 
@@ -46,34 +96,99 @@
     width: 80px;
     height: 80px;
     object-fit: contain;
-    background: white; /* Ensures visibility against cream */
-    padding: 5px;
+    background: white;
+    padding: 8px;
     border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.edu-title-group h3 {
+    font-size: 2.2rem;
+    margin: 0;
+    line-height: 1.2;
 }
 
 .edu-meta {
     font-size: 1.2rem;
     color: var(--accent-orange);
     font-weight: 700;
-    margin: 0;
+    margin: 0 0 0.3rem 0;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .edu-degree {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    margin: 0.5rem 0;
+    margin: 1rem 0 0.5rem 0;
     color: var(--text-main);
 }
 
 .edu-details {
     font-size: 1.4rem;
     color: #444;
-    max-width: 800px;
+    max-width: 850px;
+    line-height: 1.5;
 }
 
-/* Nav Active Indicator */
+/* --- Global Footer --- */
+footer {
+    padding: 4rem 18%;
+    border-top: 1px solid #333;
+    margin-top: 4rem;
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-name {
+    font-weight: 700;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1rem;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+    color: var(--accent-orange);
+}
+
+.back-to-top {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid var(--accent-orange);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-to-top:hover {
+    background: var(--accent-orange);
+    color: white;
+}
+
 .nav-right a.active {
     color: var(--accent-orange) !important;
 }
