@@ -318,3 +318,50 @@ footer { padding: 6rem 18%; border-top: 1px solid #333; opacity: 0.8; }
     background-color: #e04500; /* 深一点的橙色 */
     transform: scale(1.1);
 }
+
+/* Footer navigation links */
+.footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-left a,
+.footer-center a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: 700;
+}
+
+.footer-center a:last-child {
+    margin-right: 0;
+}
+
+.footer-left a:hover,
+.footer-center a:hover {
+    text-decoration: none; /* 保持无下划线，和header一致 */
+    opacity: 0.9;
+}
+
+.footer-right {
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+/* 小屏幕适配 */
+@media (max-width: 768px) {
+    .footer-wrap {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-left a,
+    .footer-center a {
+        margin: 0 1rem;
+    }
+    .footer-center {
+        margin: 0.5rem 0;
+    }
+}
