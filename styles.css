@@ -127,3 +127,88 @@ h1 {
 
 footer { padding: 6rem 18%; border-top: 1px solid #333; opacity: 0.8; }
 .footer-wrap { display: flex; justify-content: space-between; }
+
+/* Roadmap Specific Styles */
+.roadmap-container {
+    padding: 2rem 18% 5rem 18%;
+    position: relative;
+}
+
+/* The vertical line connecting everything */
+.roadmap-container::before {
+    content: '';
+    position: absolute;
+    left: 18.5%; /* Aligned with the dots */
+    top: 150px;
+    bottom: 100px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-orange), #333);
+    z-index: 0;
+}
+
+.roadmap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.roadmap-dot {
+    width: 14px;
+    height: 14px;
+    background: var(--accent-orange);
+    border-radius: 50%;
+    margin-top: 5rem; /* Centers with the first card's top area */
+    box-shadow: 0 0 15px var(--accent-orange);
+}
+
+.edu-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.school-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.school-logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.edu-meta {
+    font-size: 1.2rem;
+    color: var(--accent-orange);
+    font-weight: 700;
+    margin: 0;
+}
+
+.edu-degree {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.edu-details {
+    font-size: 1.4rem;
+    color: #444;
+}
+
+/* Ensure nav active state looks good */
+.nav-right a.active {
+    border-bottom: 2px solid var(--accent-orange);
+}
