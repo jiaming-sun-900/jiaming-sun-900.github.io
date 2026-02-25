@@ -1,58 +1,87 @@
-/* --- Enhanced Font Hierarchy & Roadmap Refinements --- */
+/* --- Stabilized Roadmap Styling --- */
+.roadmap-container {
+    padding: 2rem 18% 6rem 18%;
+    position: relative;
+}
+
+/* Vertical Track - Precisely Aligned */
+.roadmap-container::before {
+    content: '';
+    position: absolute;
+    left: 18.45%; 
+    top: 200px;
+    bottom: 150px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-orange), #333);
+    z-index: 0;
+}
+
+.roadmap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.roadmap-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--accent-orange);
+    border-radius: 50%;
+    margin-top: 4.5rem; /* Aligns with center of logo */
+    box-shadow: 0 0 10px var(--accent-orange);
+    flex-shrink: 0;
+}
 
 .edu-header {
     display: flex;
     align-items: center;
-    gap: 3rem; /* Increased gap */
-    margin-bottom: 2rem;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Larger Logos */
 .school-logo {
-    width: 140px; /* Much larger, similar impact to headshot */
-    height: 140px;
+    width: 100px; /* Scaled down for elegance */
+    height: 100px;
     object-fit: contain;
     background: white;
-    padding: 12px;
+    padding: 10px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .edu-title-group h3 {
-    font-size: 2.8rem; /* Prominent School Name */
+    font-size: 2.2rem; /* Clean and legible */
     margin: 0;
-    line-height: 1.1;
+    line-height: 1.2;
     color: var(--text-main);
 }
 
 .edu-meta {
-    font-size: 1.6rem; /* Prominent Duration */
+    font-size: 1.3rem;
     color: var(--accent-orange);
     font-weight: 700;
-    margin-top: 0.5rem;
-    text-transform: none; /* Keeps it clean */
-    letter-spacing: 0;
+    margin-top: 0.3rem;
 }
 
 .edu-degree {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    margin: 1rem 0 0.5rem 0;
     color: #333;
+    margin: 0.5rem 0;
 }
 
 .edu-details {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #555;
-    max-width: 850px;
     line-height: 1.5;
 }
 
-/* --- Refined Footer with Navigation --- */
+/* --- Fixed Footer Navigation --- */
 footer {
     padding: 4rem 18%;
     border-top: 1px solid #333;
-    background: rgba(10, 10, 10, 0.9);
 }
 
 .footer-wrap {
@@ -64,54 +93,34 @@ footer {
 .footer-left {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
 }
 
-.footer-name {
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.footer-loc {
-    opacity: 0.6;
-    font-size: 1rem;
-}
+.footer-name { font-weight: 700; font-size: 1.1rem; }
+.footer-loc { opacity: 0.6; font-size: 0.9rem; }
 
 .footer-nav {
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .footer-nav a {
     color: var(--text-light);
     text-decoration: none;
-    font-size: 1.1rem;
     font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
-    color: var(--accent-orange);
+    font-size: 1rem;
 }
 
 .back-to-top {
     color: var(--accent-orange);
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
     border: 1px solid var(--accent-orange);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
 .back-to-top:hover {
     background: var(--accent-orange);
     color: white;
-}
-
-/* Vertical Track adjustment for larger items */
-.roadmap-container::before {
-    left: 18.5%;
-    top: 200px;
 }
