@@ -1,179 +1,145 @@
 :root {
-    --bg-color: #F8F5F2;
-    --card-bg: #FFFFFF;
+    --bg-deep-black: #0A0A0A;
+    --card-anthropic: #F9F6F0;
     --text-main: #1A1A1A;
-    --accent-orange: #E65100;
-    --shadow: 0 4px 20px rgba(0,0,0,0.05);
+    --text-light: #FDFCF8;
+    --accent-orange: #FF4F00;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    background-color: var(--bg-deep-black);
+    color: var(--text-light);
     font-family: 'Libre Baskerville', serif;
     margin: 0;
     line-height: 1.6;
 }
 
+#vectorField {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 header nav {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 5%;
+    padding: 3rem 18%;
     font-weight: 700;
 }
 
 .nav-right a {
     margin-left: 2rem;
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--text-light);
 }
 
-.nav-right a.active {
-    color: var(--accent-orange);
-}
-
-/* Index Page Styles */
+/* Centered Hero Layout */
 .hero-card {
-    background: var(--card-bg);
-    margin: 2rem 5%;
-    padding: 4rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    background: var(--card-anthropic);
+    color: var(--text-main);
+    margin: 2rem 18%;
+    padding: 5rem 4rem; /* More vertical breathing room */
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.hero-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertical alignment */
+    gap: 4rem;
+}
+
+.hero-text {
+    flex: 1.6; /* Balanced text width */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Horizontally centers the image in the right half */
+}
+
+.hero-image img {
+    width: 300px; /* Slightly larger for better impact */
+    height: 300px;
+    border-radius: 35px; /* Premium rounded square */
+    object-fit: cover;
+    border: 3px solid var(--accent-orange);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 h1 {
     font-size: 5.5rem;
     margin: 0;
     letter-spacing: -2px;
+    line-height: 1.05;
 }
 
 .sub-headline {
     color: var(--accent-orange);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin: 1rem 0;
+    margin: 1.2rem 0;
 }
 
 .bio {
     font-size: 1.8rem;
-    max-width: 900px;
-    margin-bottom: 2rem;
+    max-width: 680px;
 }
 
+/* Narrowed Content Sections */
 .section-container {
-    padding: 2rem 5%;
+    padding: 0 18%;
 }
 
 .section-title {
-    font-size: 1.2rem;
+    color: var(--text-light);
+    margin: 4.5rem 0 1.2rem 0;
+    font-size: 1.4rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #888;
-    margin-bottom: 1.5rem;
+    letter-spacing: 3px;
 }
 
 .info-card {
-    background: var(--card-bg);
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
+    background: var(--card-anthropic);
+    color: var(--text-main);
+    padding: 4rem;
+    border-radius: 16px;
+    margin-bottom: 4rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 .entry h3 {
+    font-size: 2.1rem;
     margin: 0 0 0.5rem 0;
-    font-size: 1.4rem;
 }
 
 .entry p {
-    margin: 0 0 1.5rem 0;
-    color: #555;
+    font-size: 1.5rem;
+    color: #222;
 }
 
-/* Education Roadmap Styles */
-.roadmap-container {
-    padding: 2rem 18% 8rem 18%;
-    position: relative;
+.links {
+    margin-top: 2.5rem;
 }
 
-.roadmap-container::before {
-    content: '';
-    position: absolute;
-    left: 18.5%; 
-    top: 180px;
-    bottom: 150px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent-orange), #333);
-    z-index: 0;
-}
-
-.roadmap-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 3rem;
-    margin-bottom: 3rem;
-    position: relative;
-    z-index: 1;
-}
-
-.roadmap-dot {
-    width: 14px;
-    height: 14px;
-    background: var(--accent-orange);
-    border-radius: 50%;
-    margin-top: 5rem;
-    box-shadow: 0 0 15px var(--accent-orange);
-    flex-shrink: 0;
-}
-
-.edu-header {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.school-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    background: white;
-    padding: 5px;
-    border-radius: 8px;
-}
-
-.edu-meta {
-    font-size: 1.2rem;
-    color: var(--accent-orange);
-    font-weight: 700;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.edu-degree {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0.5rem 0;
-    color: var(--text-main);
-}
-
-.edu-details {
+.links a {
     font-size: 1.4rem;
-    color: #444;
-    max-width: 800px;
+    margin-right: 2rem;
+    color: var(--text-main);
+    font-weight: 700;
+    text-decoration: underline;
 }
 
-/* Footer */
 footer {
-    padding: 4rem 5%;
-    border-top: 1px solid #ddd;
-    margin-top: 2rem;
+    padding: 6rem 18%;
+    border-top: 1px solid #333;
+    opacity: 0.8;
 }
 
 .footer-wrap {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
-    color: #555;
 }
