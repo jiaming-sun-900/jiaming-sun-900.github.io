@@ -90,6 +90,21 @@ h1 {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 1.2rem 0;
+    white-space: nowrap; /* 强制不换行 */
+}
+
+/* 当屏幕宽度小于 900px 时，适当减小字体，避免溢出 */
+@media (max-width: 900px) {
+    .sub-headline {
+        font-size: 1.5rem;
+    }
+}
+
+/* 当屏幕宽度小于 600px 时，再减小一点 */
+@media (max-width: 600px) {
+    .sub-headline {
+        font-size: 1.2rem;
+    }
 }
 
 .bio {
