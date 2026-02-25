@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="vectorField"></canvas>
+
     <header>
         <nav>
             <div class="nav-left"><a href="index.html" style="text-decoration:none; color:inherit;">Jiaming Sun</a></div>
@@ -28,8 +30,8 @@
                 <div class="edu-header">
                     <img src="washu_seal.png" alt="WashU Seal" class="school-logo">
                     <div>
-                        <p class="edu-meta">2023 – 2027</p>
                         <h3>Washington University in St. Louis</h3>
+                        <p class="edu-meta">Sep 2023 – May 2027</p>
                     </div>
                 </div>
                 <p class="edu-degree">B.S. Biomedical Engineering</p>
@@ -41,14 +43,14 @@
             <div class="roadmap-dot"></div>
             <div class="info-card">
                 <div class="edu-header">
-                    <img src="pennstate_logo.png" alt="Penn State Logo" class="school-logo">
+                    <div class="school-logo-placeholder">PSU</div>
                     <div>
-                        <p class="edu-meta">May 2025 – Aug 2025</p>
                         <h3>Penn State University</h3>
+                        <p class="edu-meta">May 2025 – Aug 2025</p>
                     </div>
                 </div>
-                <p class="edu-degree">Research Internship</p>
-                <p class="edu-details">Biomedical Acoustics (BASiL Lab). High-frame-rate Doppler ultrasound for deep vein thrombosis delineation.</p>
+                <p class="edu-degree">Research Internship — Biomedical Acoustics (BASiL Lab)</p>
+                <p class="edu-details">Focus on high-frame-rate Doppler ultrasound for DVT delineation.</p>
             </div>
         </div>
 
@@ -56,29 +58,26 @@
             <div class="roadmap-dot"></div>
             <div class="info-card">
                 <div class="edu-header">
-                    <img src="brown_logo.png" alt="Brown University Logo" class="school-logo">
+                    <div class="school-logo-placeholder">B</div>
                     <div>
-                        <p class="edu-meta">Jul 2022 – Aug 2022</p>
                         <h3>Brown University</h3>
+                        <p class="edu-meta">Jul 2022 – Aug 2022</p>
                     </div>
                 </div>
-                <p class="edu-degree">Pre-College Certificate</p>
-                <p class="edu-details">Environmental Toxicology. Studied physiological impacts of toxins within a rigorous research environment.</p>
+                <p class="edu-degree">Pre-College Certificate — Environmental Toxicology</p>
+                <p class="edu-details">Explored the physiological impacts of toxins at a top-tier liberal arts research institution.</p>
             </div>
         </div>
 
         <div class="roadmap-item">
             <div class="roadmap-dot"></div>
             <div class="info-card">
-                <div class="edu-header">
-                    <img src="rdfz_logo.png" alt="RDFZ Logo" class="school-logo">
-                    <div>
-                        <p class="edu-meta">2020 – 2023</p>
-                        <h3>The High School Affiliated to Renmin University of China (RDFZ)</h3>
-                    </div>
+                <div class="entry">
+                    <h3>The High School Affiliated to Renmin University of China (RDFZ)</h3>
+                    <p class="edu-meta">Sep 2020 – Jun 2023 · Beijing</p>
+                    <p class="edu-degree">High School Diploma · Science Track</p>
+                    <p class="edu-details">Filed 2 patents for solar-powered PEM electrolyzers during tenure.</p>
                 </div>
-                <p class="edu-degree">High School Diploma</p>
-                <p class="edu-details">Science Track. Beijing, China. Filed two patents for solar-powered PEM electrolyzers.</p>
             </div>
         </div>
     </main>
@@ -89,5 +88,6 @@
             <span>St. Louis, MO</span>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
