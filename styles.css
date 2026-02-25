@@ -380,3 +380,160 @@ footer { padding: 6rem 18%; border-top: 1px solid #333; opacity: 0.8; }
         margin: 0.5rem 0;
     }
 }
+
+/* ===== 全局响应式安全增强 ===== */
+
+/* 1. 更聪明的盒模型（防止宽高溢出） */
+* {
+    box-sizing: border-box;
+}
+
+/* 2. 图片、视频等嵌入内容的最大宽度限制（防止撑破容器） */
+img, video, canvas, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3. 为所有主要容器设置合理的最大宽度，大屏幕下自动居中 */
+header nav,
+.hero-card,
+.section-container,
+.roadmap-container,
+footer {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 4. 头像区域在中等屏幕下的保护 */
+@media (max-width: 1100px) {
+    .hero-layout {
+        gap: 2rem;
+    }
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* 5. 平板及以下：头像和文本改为上下布局，居中显示 */
+@media (max-width: 800px) {
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        width: 100%;
+    }
+    .links {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .hero-image {
+        margin-top: 2rem;
+        width: 220px;
+        height: 220px;
+    }
+    .hero-image img {
+        width: 220px;
+        height: 220px;
+    }
+    h1 {
+        font-size: 4rem; /* 大标题稍微缩小 */
+    }
+    .bio {
+        font-size: 1.4rem;
+        max-width: 100%;
+    }
+}
+
+/* 6. 小手机：进一步收紧内边距和字号 */
+@media (max-width: 500px) {
+    header nav {
+        padding: 1.5rem 5%;
+    }
+    .hero-card {
+        margin: 1rem 3%;
+        padding: 2rem 1.5rem;
+    }
+    .section-container {
+        padding: 0 5%;
+    }
+    .info-card {
+        padding: 2rem 1.5rem;
+    }
+    h1 {
+        font-size: 3.2rem;
+        letter-spacing: -1px;
+    }
+    .sub-headline {
+        font-size: 1rem; /* 强制一行，配合之前的 nowrap */
+        white-space: normal; /* 如果实在放不下，允许换行（但字号已经很小了） */
+    }
+    .entry h3 {
+        font-size: 1.6rem;
+    }
+    .entry p, .links a {
+        font-size: 1.2rem;
+    }
+    footer {
+        padding: 3rem 5%;
+    }
+    #backToTop {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* 7. 教育时间轴在窄屏下的适配 */
+@media (max-width: 700px) {
+    .roadmap-container {
+        padding: 2rem 5%;
+    }
+    .roadmap-container::before {
+        left: 20px; /* 让轴线靠左 */
+    }
+    .roadmap-item {
+        gap: 1rem;
+    }
+    .roadmap-dot {
+        margin-top: 3rem;
+    }
+    .edu-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .school-logo {
+        width: 60px;
+        height: 60px;
+    }
+    .edu-degree {
+        font-size: 1.5rem;
+    }
+    .edu-details {
+        font-size: 1.2rem;
+    }
+}
+
+/* 8. 超大屏幕：限制内容宽度，避免行过长 */
+@media (min-width: 1800px) {
+    header nav,
+    .hero-card,
+    .section-container,
+    .roadmap-container,
+    footer {
+        max-width: 1600px;
+    }
+    .hero-text {
+        max-width: 900px;
+    }
+}
