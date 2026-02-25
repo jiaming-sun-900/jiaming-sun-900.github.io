@@ -45,3 +45,23 @@ if (canvas) {
     resize();
     draw();
 }
+
+// Back to Top button functionality
+const backToTopButton = document.getElementById('backToTop');
+
+if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // 滚动超过300px显示按钮
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 平滑滚动
+        });
+    });
+}
