@@ -8,25 +8,42 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .edu-list {
-            padding: 2rem 18% 8rem 18%;
+            padding: 4rem 18% 8rem 18%;
         }
         .edu-entry {
             display: flex;
             flex-direction: row;
             align-items: flex-start;
-            gap: 3rem;
-            margin-bottom: 5rem;
+            gap: 3.5rem;
+            margin-bottom: 8rem;
         }
         .edu-entry img {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             object-fit: contain;
             flex-shrink: 0;
+        }
+        .edu-logo-circle {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+        .edu-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         .edu-text {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            padding-top: 0.4rem;
         }
         .edu-year {
             font-size: 1.4rem;
@@ -34,19 +51,23 @@
             color: #FF4F00;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 0;
+            margin: 0 0 0.5rem 0;
         }
         .edu-school {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #FDFCF8;
-            margin: 0;
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
         }
         .edu-line {
             font-size: 1.4rem;
             font-weight: 400;
             color: #FDFCF8;
-            margin: 0;
+            margin: 0 0 0.3rem 0;
+        }
+        .edu-line:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -65,7 +86,6 @@
     </header>
 
     <main class="edu-list">
-        <h2 class="section-title">Educational Roadmap</h2>
 
         <div class="edu-entry">
             <img src="washu_logo.png" alt="WashU Logo">
@@ -82,19 +102,22 @@
             <div class="edu-text">
                 <p class="edu-year">May 2025 – Aug 2025</p>
                 <p class="edu-school">Penn State University</p>
-                <p class="edu-line">Research Internship @ BASiL</p>
+                <p class="edu-line">Research Internship <span style="color:#FF4F00;">@</span> BASiL</p>
                 <p class="edu-line">High-frame-rate Doppler ultrasound for deep vein thrombosis delineation</p>
             </div>
         </div>
 
         <div class="edu-entry">
-            <img src="rdfz_logo.png" alt="RDFZ Logo">
+            <div class="edu-logo-circle">
+                <img src="rdfz_logo.png" alt="RDFZ Logo">
+            </div>
             <div class="edu-text">
                 <p class="edu-year">2020 – 2023</p>
                 <p class="edu-school">The High School Affiliated to Renmin University of China (RDFZ)</p>
                 <p class="edu-line">High School Diploma</p>
             </div>
         </div>
+
     </main>
 
     <footer>
