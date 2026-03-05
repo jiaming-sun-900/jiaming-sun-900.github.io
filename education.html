@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .edu-list {
-            padding: 4rem 8% 8rem 8%;
-            max-width: 1800px;
+            padding: 4rem 0 8rem 0;
+        }
+        .edu-content-wrap {
+            max-width: 900px;
             margin: 0 auto;
         }
         .edu-entry {
@@ -56,7 +58,7 @@
             margin: 0 0 0.5rem 0;
         }
         .edu-school {
-            font-size: clamp(2rem, 2.8vw, 3rem);
+            font-size: clamp(1.5rem, 2.8vw, 2.5rem);
             font-weight: 700;
             color: #FDFCF8;
             margin: 0 0 1rem 0;
@@ -92,38 +94,40 @@
     </header>
 
     <main class="edu-list">
+        <div class="edu-content-wrap">
 
-        <div class="edu-entry">
-            <img src="washu_logo.png" alt="WashU Logo">
-            <div class="edu-text">
-                <p class="edu-year">2023 – 2027</p>
-                <p class="edu-school">Washington University in St. Louis</p>
-                <p class="edu-line">B.S. Biomedical Engineering</p>
-                <p class="edu-line">Minors in Biomedical Data Science & Business Strategy</p>
+            <div class="edu-entry">
+                <img src="washu_logo.png" alt="WashU Logo">
+                <div class="edu-text">
+                    <p class="edu-year">2023 – 2027</p>
+                    <p class="edu-school">Washington University in St. Louis</p>
+                    <p class="edu-line">B.S. Biomedical Engineering</p>
+                    <p class="edu-line">Minors in Biomedical Data Science & Business Strategy</p>
+                </div>
             </div>
+
+            <div class="edu-entry">
+                <img src="pennstate_logo.png" alt="Penn State Logo">
+                <div class="edu-text">
+                    <p class="edu-year">May 2025 – Aug 2025</p>
+                    <p class="edu-school">Penn State University</p>
+                    <p class="edu-line">Research Internship <span style="color:#FF4F00;">@</span> BASiL</p>
+                    <p class="edu-line">High-frame-rate Doppler ultrasound for deep vein thrombosis delineation</p>
+                </div>
+            </div>
+
+            <div class="edu-entry">
+                <div class="edu-logo-circle">
+                    <img src="rdfz_logo.png" alt="RDFZ Logo">
+                </div>
+                <div class="edu-text">
+                    <p class="edu-year">2020 – 2023</p>
+                    <p class="edu-school">The High School Affiliated to Renmin University of China (RDFZ)</p>
+                    <p class="edu-line">High School Diploma</p>
+                </div>
+            </div>
+
         </div>
-
-        <div class="edu-entry">
-            <img src="pennstate_logo.png" alt="Penn State Logo">
-            <div class="edu-text">
-                <p class="edu-year">May 2025 – Aug 2025</p>
-                <p class="edu-school">Penn State University</p>
-                <p class="edu-line">Research Internship <span style="color:#FF4F00;">@</span> BASiL</p>
-                <p class="edu-line">High-frame-rate Doppler ultrasound for deep vein thrombosis delineation</p>
-            </div>
-        </div>
-
-        <div class="edu-entry">
-            <div class="edu-logo-circle">
-                <img src="rdfz_logo.png" alt="RDFZ Logo">
-            </div>
-            <div class="edu-text">
-                <p class="edu-year">2020 – 2023</p>
-                <p class="edu-school">The High School Affiliated to Renmin University of China (RDFZ)</p>
-                <p class="edu-line">High School Diploma</p>
-            </div>
-        </div>
-
     </main>
 
     <footer>
