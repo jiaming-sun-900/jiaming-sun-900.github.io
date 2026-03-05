@@ -130,6 +130,15 @@
             margin: 1rem 0 0 0;
             line-height: 1.5;
         }
+        /* Override global orange active rule — Music is always mint */
+        .nav-right a.active {
+            color: #4ECDC4 !important;
+            border-bottom-color: #4ECDC4;
+        }
+        .footer-center a.active {
+            color: #4ECDC4;
+            border-bottom: 2px solid #4ECDC4;
+        }
     </style>
 </head>
 <body>
@@ -141,7 +150,7 @@
             <div class="nav-right">
                 <a href="education.html">Education</a>
                 <a href="research.html">Research</a>
-                <a href="music.html" style="color:#4ECDC4;">Music</a>
+                <a href="music.html" class="active">Music</a>
             </div>
         </nav>
     </header>
@@ -204,7 +213,7 @@
             <div class="footer-center">
                 <a href="education.html">Education</a>
                 <a href="research.html">Research</a>
-                <a href="music.html" style="color:#4ECDC4;">Music</a>
+                <a href="music.html" class="active">Music</a>
             </div>
             <div class="footer-right">
                 <span>St. Louis, MO</span>
