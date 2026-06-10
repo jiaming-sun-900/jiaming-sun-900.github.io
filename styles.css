@@ -4,6 +4,17 @@
     --text-main: #1A1A1A;
     --text-light: #FDFCF8;
     --accent-orange: #FF4F00;
+    --accent-music: #4ECDC4;   /* teal accent for the Music nav/footer link */
+    --side-gap: 18%;           /* shared left/right page inset (header, hero, sections, footer) */
+}
+
+/* Shrink the side inset as the viewport narrows so content keeps breathing room
+   on laptops/tablets. The large-screen design (>=1500px) is unchanged at 18%. */
+@media (max-width: 1500px) {
+    :root { --side-gap: 12%; }
+}
+@media (max-width: 1100px) {
+    :root { --side-gap: 7%; }
 }
 
 /* 基础盒模型保护（好习惯，不影响布局） */
@@ -27,8 +38,18 @@ body {
 header nav {
     display: flex;
     justify-content: space-between;
-    padding: 3rem 18%;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 3rem var(--side-gap);
     font-weight: 700;
+    font-size: 1.3rem;   /* nav links (name + Education/Projects/Music); anchors inherit this */
+}
+
+/* Brand / name link on the left of the nav */
+.nav-left a {
+    text-decoration: none;
+    color: var(--text-light);
 }
 
 .nav-right a {
@@ -37,12 +58,19 @@ header nav {
     color: var(--text-light);
 }
 
+/* Teal accent for the Music link (nav + footer) */
+.nav-right a.nav-music,
+.footer-center a.nav-music {
+    color: var(--accent-music);
+}
+
 /* Centered Hero Layout */
 .hero-card {
     background: var(--card-anthropic);
     color: var(--text-main);
-    margin: 2rem 18%;
-    padding: 5rem 4rem;
+    margin: 2rem var(--side-gap);
+    /* clamp() so padding eases down on smaller screens; maxes out at the original 5rem/4rem */
+    padding: clamp(2.5rem, 5vw, 5rem) clamp(1.5rem, 4vw, 4rem);
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
@@ -54,7 +82,8 @@ header nav {
     gap: 4rem;
 }
 
-.hero-text { flex: 1.6; }
+/* min-width:0 lets long text wrap instead of overflowing the flex row */
+.hero-text { flex: 1.6; min-width: 0; }
 
 /* Centering the Headshot */
 .hero-image {
@@ -84,7 +113,7 @@ header nav {
 .hero-image:hover img { transform: scale(1.02); }
 
 h1 {
-    font-size: 5.5rem;
+    font-size: clamp(2.75rem, 6vw, 5.5rem);
     margin: 0;
     letter-spacing: -2px;
     line-height: 1.05;
@@ -92,31 +121,25 @@ h1 {
 
 .sub-headline {
     color: var(--accent-orange);
-    font-size: 1.8rem;
+    /* clamp() replaces the old 900px/600px breakpoints: scales smoothly and may wrap to avoid overflow */
+    font-size: clamp(1.2rem, 2.2vw, 1.8rem);
     font-weight: 700;
     margin: 1.2rem 0;
-    white-space: nowrap; /* 保持一行 */
 }
 
-/* 小窗口时适当缩小字体，防止溢出（保留，桌面下也有用） */
-@media (max-width: 900px) {
-    .sub-headline {
-        font-size: 1.5rem;
-    }
-}
-@media (max-width: 600px) {
-    .sub-headline {
-        font-size: 1.2rem;
-    }
+/* Inline link inside the sub-headline (e.g. "WashU") keeps the headline's orange color */
+.sub-headline a {
+    color: inherit;
+    text-decoration: underline;
 }
 
 .bio {
-    font-size: 1.7rem;
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
     max-width: 650px;
 }
 
 /* Rest of Content */
-.section-container { padding: 0 18%; }
+.section-container { padding: 0 var(--side-gap); }
 .section-title {
     color: var(--text-light);
     margin: 4.5rem 0 1.2rem 0;
@@ -128,7 +151,7 @@ h1 {
 .info-card {
     background: var(--card-anthropic);
     color: var(--text-main);
-    padding: 4rem;
+    padding: clamp(1.75rem, 4vw, 4rem);
     border-radius: 16px;
     margin-bottom: 4rem;
 }
@@ -136,14 +159,33 @@ h1 {
 .entry h3 { font-size: 2.1rem; margin-bottom: 0.5rem; }
 .entry p { font-size: 1.4rem; color: #222; }
 
+/* Spacing between the Currently / Previously role entries (was inline margin-bottom) */
+.info-card .entry { margin-bottom: 2.5rem; }
+.info-card .entry:last-child { margin-bottom: 0; }
+
+/* Role headline inside an info-card entry, e.g. "Researcher @ Chen Ultrasound Lab".
+   clamp() scales it on narrow screens; no nowrap so long names wrap instead of overflowing. */
+.info-card .entry-role {
+    font-size: clamp(1.3rem, 2.6vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.2;
+}
+.info-card .entry-role a {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+.entry-at { color: var(--accent-orange); }   /* the orange "@" separator */
+
 .links a {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
     margin-right: 2rem;
     color: var(--text-main);
     font-weight: 700;
 }
 
-footer { padding: 6rem 18%; border-top: 1px solid #333; opacity: 0.8; }
+footer { padding: 6rem var(--side-gap); border-top: 1px solid #333; opacity: 0.8; }
 
 /* Footer navigation (保留，但不加手机适配) */
 .footer-wrap {
@@ -159,6 +201,7 @@ footer { padding: 6rem 18%; border-top: 1px solid #333; opacity: 0.8; }
     text-decoration: none;
     margin-right: 2rem;
     font-weight: 700;
+    font-size: 1.3rem;   /* match the enlarged nav links */
 }
 .footer-center a:last-child {
     margin-right: 0;
@@ -238,9 +281,12 @@ footer { padding: 6rem 18%; border-top: 1px solid #333; opacity: 0.8; }
     max-width: 800px;
 }
 
-/* Nav Active Indicator */
-.nav-right a.active {
-    color: var(--accent-orange) !important;
+/* Active-page indicator: orange name/brand link with an underline.
+   On the homepage the "Jiaming Sun" links in both the nav and footer are marked active. */
+.nav-left a.active,
+.nav-right a.active,
+.footer-left a.active {
+    color: var(--accent-orange);
     border-bottom: 2px solid var(--accent-orange);
 }
 
@@ -273,4 +319,15 @@ footer { padding: 6rem 18%; border-top: 1px solid #333; opacity: 0.8; }
 img, video, canvas, iframe {
     max-width: 100%;
     height: auto;
+}
+
+/* Tablet-portrait and below: stack the hero text above the headshot so neither gets crushed.
+   (Targets iPad-portrait ~768px upward; phones are intentionally out of scope.) */
+@media (max-width: 860px) {
+    .hero-layout {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+    }
+    .hero-image { align-self: center; }
 }

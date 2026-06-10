@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Jiaming Sun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Projects list — reuses the shared side inset (--side-gap) like the rest of the site */
+        .projects-main {
+            padding: 2rem var(--side-gap) 8rem var(--side-gap);
+        }
+        .project-card {
+            background: var(--card-anthropic);
+            color: var(--text-main);
+            padding: clamp(2.5rem, 5vw, 4rem);
+            border-radius: 16px;
+            max-width: 640px;
+        }
+        .project-name {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
+        }
+        .project-desc {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: #333;
+            margin: 0 0 2.2rem 0;
+            line-height: 1.5;
+        }
+        .project-play {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--card-anthropic);
+            background: var(--accent-orange);
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .project-play:hover {
+            background: #e04500;
+            transform: scale(1.03);
+        }
+        /* Footer active indicator (the global active rule covers nav + footer-left only) */
+        .footer-center a.active {
+            color: #FF4F00;
+            border-bottom: 2px solid #FF4F00;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="vectorField"></canvas>
+
+    <header>
+        <nav>
+            <div class="nav-left"><a href="index.html" style="text-decoration:none; color:inherit;">Jiaming Sun</a></div>
+            <div class="nav-right">
+                <a href="education.html">Education</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="music.html" style="color:#4ECDC4;">Music</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="projects-main">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-card">
+            <h3 class="project-name">OmniGeoQuiz</h3>
+            <p class="project-desc">An interactive geography quiz with satellite imagery</p>
+            <a class="project-play" href="https://jiaming-sun-900.github.io/omni-geo-quiz/" target="_blank">Play →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-wrap">
+            <div class="footer-left">
+                <a href="index.html">Jiaming Sun</a>
+            </div>
+            <div class="footer-center">
+                <a href="education.html">Education</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="music.html" style="color:#4ECDC4;">Music</a>
+            </div>
+            <div class="footer-right">
+                <span>St. Louis, MO</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
