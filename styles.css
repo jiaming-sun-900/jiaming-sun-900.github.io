@@ -174,7 +174,6 @@ h1 {
 }
 .info-card .entry-role a {
     color: var(--text-main);
-    text-decoration: underline;
 }
 .entry-at { color: var(--accent-orange); }   /* the orange "@" separator */
 
@@ -183,6 +182,21 @@ h1 {
     margin-right: 2rem;
     color: var(--text-main);
     font-weight: 700;
+}
+
+/* Unified subtle link style for the main content area: the hero contact links
+   (LinkedIn / GitHub / email) and the lab/project links in the info cards.
+   No underline, pointer cursor, and an eased hover to orange to signal clickability.
+   Nav header and footer links are intentionally excluded. */
+.links a,
+.info-card .entry-role a {
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.links a:hover,
+.info-card .entry-role a:hover {
+    color: var(--accent-orange);
 }
 
 footer { padding: 6rem var(--side-gap); border-top: 1px solid #333; opacity: 0.8; }
