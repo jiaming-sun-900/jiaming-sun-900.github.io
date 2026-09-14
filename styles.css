@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Jiaming Sun, personal CV
+
+   Two colors only: a warm ivory ground and a near-black ink.
+   Type metrics are aligned to darioamodei.com, read out of its stylesheet.
+   Hierarchy comes from size, weight, and space. Never from color.
+   ========================================================================== */
+
+:root {
+  --ivory: #f0eee6;
+  --ink:   #1f1e1d;
+
+  --bg:   var(--ivory);
+  --text: var(--ink);
+
+  --measure: 860px;
+  --fade: 500ms;
+  --ease: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+[data-theme="dark"] {
+  --bg:   var(--ink);
+  --text: var(--ivory);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
+
+/* No -webkit-font-smoothing here on purpose: `antialiased` thins the strokes on
+   macOS and made this page read lighter than the reference, which does not set
+   it on body text. */
+body {
+  margin: 0;
+  padding: 0 32px 168px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Newsreader", "Times New Roman", serif;
+  font-variation-settings: "opsz" 24;   /* the reference's 24pt optical master */
+  font-size: 1.5rem;                    /* 24px */
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0;
+  transition: background-color var(--fade) var(--ease),
+              color var(--fade) var(--ease);
+}
+
+main, footer { max-width: var(--measure); margin: 0 auto; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+/* --- Intro ---------------------------------------------------------------- */
+
+.intro { padding-top: 144px; }
+
+/* Name and theme toggle share a line; the toggle sits flush with the right
+   edge of the column, never outside it. */
+.intro-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+/* The one place the reference is not followed: it sets its author's name at
+   1.44em because he needs no introduction. A CV's name is its anchor. */
+h1 {
+  font-variation-settings: "opsz" 60;   /* the Display cut, as the reference uses */
+  font-size: 3.625rem;                  /* 58px, 2.40x body */
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.lede { margin: 0; }
+
+/* --- Sections ------------------------------------------------------------- */
+
+section { margin-top: 4.75rem; }
+footer { margin: 4.75rem auto 0; }
+
+h2 {
+  font-size: 2.375rem;                  /* 38px, 1.60x body */
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 0 0 30px;
+}
+
+.entries { list-style: none; margin: 0; padding: 0; }
+
+.entries > li + li { margin-top: 32px; }
+
+h3 {
+  font-size: 1.8125rem;                 /* 29px, 1.20x body */
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.at { font-weight: 400; }
+
+.entries p { margin: 5px 0 0; }
+
+/* Dates read as secondary through italics, not a lighter color: one ink only. */
+.meta { font-style: italic; }
+
+/* --- Footer --------------------------------------------------------------- */
+
+.contact { display: flex; flex-wrap: wrap; gap: 34px; }
+
+.contact a { display: inline-flex; align-items: center; gap: 0.45em; }
+
+.contact svg { width: 1em; height: 1em; flex: none; }
+
+.colophon { margin: 1.2em 0 0; font-style: italic; }
+
+/* --- Theme toggle --------------------------------------------------------- */
+
+/* The 52px square keeps the tap target comfortable, but that padding would push
+   the 36px glyph 8px in from the column edge. The negative margin pulls the
+   glyph back so it aligns optically with the text below it, without shrinking
+   the target. */
+#theme-toggle {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  margin-right: -8px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+#theme-toggle:hover, #theme-toggle:focus-visible { opacity: 1; }
+#theme-toggle:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+
+#theme-toggle svg {
+  width: 36px;
+  height: 36px;
+  overflow: visible;
+  transition: transform 0.25s ease;
+}
+
+/* Both icons swell a little on hover; the sun also turns its rays a notch. */
+#theme-toggle:hover .icon-moon { transform: scale(1.15) rotate(-12deg); }
+#theme-toggle:hover .icon-sun { transform: scale(1.15); }
+
+.rays {
+  transform-origin: 12px 12px;
+  transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+#theme-toggle:hover .rays { transform: rotate(45deg); }
+
+.icon-sun { display: none; }
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+
+/* --- Theme transition ------------------------------------------------------
+
+   Ink and ground trade places on the same curve. They necessarily meet at one
+   shared value halfway through, where the text is briefly invisible; easing
+   through that midpoint rather than crossing it at a constant rate keeps the
+   unreadable window down to a few frames. Descendants inherit `color`, so the
+   whole page carries the interpolated value with it.
+
+   A diagonal wipe was built and rejected: it covered the page in flat color and
+   read as a curtain rather than a change of light. */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* --- Print -----------------------------------------------------------------
+
+   A CV gets printed. Force the light palette regardless of the current theme,
+   drop the toggle, and let the text run the full width of the paper. */
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    padding: 0;
+    font-size: 11pt;
+  }
+  main, footer { max-width: none; }
+  .intro { padding-top: 0; }
+  #theme-toggle { display: none; }
+  a { text-decoration: none; }
+  section, footer { margin-top: 2rem; }
+  h1 { font-size: 24pt; }
+  h2 { font-size: 16pt; }
+  h3 { font-size: 12pt; }
+}
+
+/* --- Narrow screens ------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  body { padding: 0 24px 112px; }
+  .intro { padding-top: 96px; }
+  h1 { font-size: 2.5rem; }  /* 40px */
+  section { margin-top: 3.5rem; }
+  footer { margin-top: 3.5rem; }
+}
