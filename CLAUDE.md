@@ -103,6 +103,9 @@ pinned to the viewport edge.
 - **Never use an em dash on this site.** Use a colon, a period, or rewrite.
 - Same for the en dash in prose. Ranges of years may use a plain hyphen.
 - **Never use contractions.** Write "I am", not "I'm"; "do not", not "don't".
+- **Every link off this site opens in a new tab**: `target="_blank"` with
+  `rel="noopener noreferrer"`. A visitor who clicks washu.edu should not lose the
+  page. `mailto:` links are exempt.
 
 ### Restraint Rules
 

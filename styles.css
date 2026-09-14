@@ -48,13 +48,18 @@ body {
 
 main, footer { max-width: var(--measure); margin: 0 auto; }
 
+/* Underline thickness is in em, not px: a fixed 1px rule reads progressively
+   thinner as the type gets larger, so the 29px entry titles looked more lightly
+   underlined than the 24px body. 0.06em is about 1.4px at body size and rises
+   with it. The offset clears the descenders; skip-ink handles the rest. */
 a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-thickness 0.15s ease;
 }
-a:hover { text-decoration-thickness: 2px; }
+a:hover { text-decoration-thickness: 0.1em; }
 
 /* --- Intro ---------------------------------------------------------------- */
 
@@ -82,6 +87,10 @@ h1 {
 }
 
 .lede { margin: 0; }
+
+/* The second paragraph changes register, from work to the person. The gap is a
+   full line so the turn is structural; size, weight, and color stay put. */
+.lede + .lede { margin-top: 1em; }
 
 /* --- Sections ------------------------------------------------------------- */
 
