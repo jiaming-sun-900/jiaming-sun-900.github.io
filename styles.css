@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Jiaming Sun, personal CV
+   Jiaming Sun, personal site
 
    Two colors only: a warm ivory ground and a near-black ink.
    Type metrics are aligned to darioamodei.com, read out of its stylesheet.
@@ -76,7 +76,7 @@ a:hover { text-decoration-thickness: 0.1em; }
 }
 
 /* The one place the reference is not followed: it sets its author's name at
-   1.44em because he needs no introduction. A CV's name is its anchor. */
+   1.44em because he needs no introduction. Here the name is the anchor. */
 h1 {
   font-variation-settings: "opsz" 60;   /* the Display cut, as the reference uses */
   font-size: 3.625rem;                  /* 58px, 2.40x body */
@@ -109,7 +109,14 @@ h2 {
 
 .entries > li + li { margin-top: 32px; }
 
+/* The entry title and its repository mark are the two ends of a row, so the
+   marks stack down the right edge of the column in line with the theme toggle
+   above them. */
 h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   font-size: 1.8125rem;                 /* 29px, 1.20x body */
   font-weight: 600;
   line-height: 1.2;
@@ -117,12 +124,34 @@ h3 {
   margin: 0;
 }
 
-.at { font-weight: 400; }
-
 .entries p { margin: 5px 0 0; }
 
-/* Dates read as secondary through italics, not a lighter color: one ink only. */
-.meta { font-style: italic; }
+/* The title links to the live project; the mark beside it is the second door,
+   to the code. Sized in em so it tracks the heading, and held back at 0.55
+   opacity so it reads as an afterthought to the name rather than competing
+   with it. No underline: an underlined glyph looks like a mistake. */
+/* Standing in for a logo until there is one. Held slightly below the cap line
+   and a touch smaller than the title, so it reads as a mark rather than as a
+   word in the name. */
+/* The mark sits inside the title link, so clicking it goes where the name goes.
+   An `svg` is a replaced element, so the link's underline stops at its edge and
+   resumes under the text: no rule needed to keep the underline off it. */
+.glyph {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.35em;
+  vertical-align: -0.14em;
+}
+
+.repo {
+  flex: none;
+  text-decoration: none;
+  display: inline-flex;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+.repo:hover, .repo:focus-visible { opacity: 1; }
+.repo svg { width: 30px; height: 30px; }
 
 /* --- Footer --------------------------------------------------------------- */
 
@@ -197,8 +226,9 @@ h3 {
 
 /* --- Print -----------------------------------------------------------------
 
-   A CV gets printed. Force the light palette regardless of the current theme,
-   drop the toggle, and let the text run the full width of the paper. */
+   Nobody is expected to print this page, but if someone does, force the light
+   palette regardless of the current theme, drop the toggle, and let the text
+   run the full width of the paper. */
 
 @media print {
   body {

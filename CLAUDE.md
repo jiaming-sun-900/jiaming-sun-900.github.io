@@ -4,13 +4,13 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 
 ## Overview
 
-Static personal CV site for Jiaming Sun, deployed via GitHub Pages. No build
+Static personal site for Jiaming Sun, deployed via GitHub Pages. No build
 system, package manager, or framework. Hand-written HTML, CSS, and JS.
 
-The repository was deliberately cleared in commit `568c996` and is being rebuilt
-from nothing. The previous design (dark background, Libre Baskerville,
-orange/teal accents, animated star canvas, four separate pages) is gone. Do not
-revive any of it. Only `washu_logo.png` and `rdfz_logo.png` were kept.
+The repository was deliberately cleared in commit `568c996` and rebuilt from
+nothing. The previous design (dark background, Libre Baskerville, orange/teal
+accents, animated star canvas, four separate pages) is gone. Do not revive any
+of it.
 
 ## Local Development
 
@@ -23,19 +23,37 @@ serves the repo root.
 
 ## What This Site Is
 
-A single-page CV. A visitor arrives knowing nothing about Jiaming and should
-leave knowing who he is, where he studies, what he has worked on, and how to
-reach him. It is not a blog or a writing archive.
+**A portfolio with a person attached, not a resume.** Jiaming has a resume and a
+LinkedIn profile already; this site exists because neither of those can carry
+taste. A duplicate of them would have no reason to exist.
+
+What follows from that, and it has already changed the page once:
+
+- **Projects lead.** They are the reason to visit. Each gets two or three
+  sentences, not the one line a resume allots, and links to the running thing.
+- **There is no Work Experience section.** It was written, then deleted. Listing
+  every lab and internship is exactly what makes a site indistinguishable from a
+  LinkedIn export. Education stays, because it is two lines and it is the only
+  place the page states a plain fact about who he is.
+- **The prose is his, not a summary.** Guitar and aviation are in the intro on
+  purpose. Cut a claim before a specific: "I love naming aircraft types from the
+  window seat" survives where "aviation enthusiast" does not.
+- **Every claim on the page is checkable in one click.** Project descriptions
+  are read out of the project repositories, never from memory or from the
+  resume. The resume said Omni Geo Quiz had seven modes; the home screen offers
+  five, and five is what the page says.
+
+It is not a blog or a writing archive.
 
 Design reference: [darioamodei.com](https://www.darioamodei.com), for its
 palette, typeface, and restraint. It is a reference, not a template. Three
 places where copying it would be wrong, all learned the hard way:
 
 - **That site is an essay archive with one content type.** Its 620px column
-  suits long prose, not short CV entries.
+  suits long prose, not a mix of prose and project entries.
 - **Its author's name is set small** (`1.44em`, weight 600) because he does not
-  need to introduce himself. Jiaming's name is the anchor of a CV and is set
-  large.
+  need to introduce himself. Jiaming's name is the anchor of this page and is
+  set large.
 - **It uses light gray for secondary text.** This site does not (see Palette).
 
 When citing a value from that site, read it out of its stylesheet rather than
@@ -74,26 +92,37 @@ to roughly match each element's pixel size.
 
 Scale (rem base 16px):
 
-| Role | Size | Weight |
-|---|---|---|
-| Name (`h1`) | 48px | 600 |
-| Section heading (`h2`) | 28px | 600 |
-| Entry title (`h3`) | 22px | 600 |
-| Intro prose, body | 22px | 400 |
-| Entry description | 20px | 400 |
+The scale is multiplicative, not a set of offsets. Each step is a ratio of the
+body size, and if the body size changes every other size and the whitespace are
+recomputed from it. An earlier request to "add 4px to everything" was carried
+out and then reverted: a flat offset pulled the name from 2.40x body down to
+2.17x and flattened the whole hierarchy.
+
+| Role | Size | Ratio | Weight | `opsz` |
+|---|---|---|---|---|
+| Name (`h1`) | 58px | 2.40x | 600 | 60 |
+| Section heading (`h2`) | 38px | 1.60x | 600 | 24 |
+| Entry title (`h3`) | 29px | 1.20x | 600 | 24 |
+| Body, everything else | 24px | 1.00x | 400 | 24 |
 
 **Section headings must be larger than body text.** An earlier version set them
 to 15px uppercase, smaller than everything around them; it was rejected on
-sight. Nothing on the page is smaller than the entry description.
+sight.
 
-Body line height is 1.65. The intro paragraph is capped at 32em so long lines do
-not run to the right edge of the column.
+**24px is the floor.** Nothing on this page is smaller than the body, including
+the things a resume would shrink: source links, dates, the colophon. If
+something needs to recede, italicise it or drop its opacity; do not shrink it.
+
+Body line height is 1.6, headings 1.1 to 1.2. Do not set
+`-webkit-font-smoothing: antialiased`: it thins the strokes on macOS and made
+this page read lighter than the reference, which does not set it on body text.
 
 ### Measure
 
-Content column is **760px**, wider than the reference's 620px. 620px is the
-optimum for running prose; this site is mostly short entries, which look thin
-and stranded in a column that narrow.
+Content column is **860px**, wider than the reference's 620px. 620px is the
+optimum for running prose; this page mixes prose with entries, which look thin
+and stranded in a column that narrow. At 24px, 860px is roughly 62 characters,
+still inside the comfortable range.
 
 **Everything lives inside that column**, including the theme toggle. Nothing is
 pinned to the viewport edge.
@@ -153,31 +182,52 @@ One page, `index.html`, read top to bottom:
    on the page. The name and the intro share the first screen; a first screen
    holding nothing but a name reads as unprofessional.
 2. **Projects**
-3. **Work Experience**
-4. **Education**
-5. **Music**, only if it earns its place. Two or three entries at most.
-6. **Contact**: LinkedIn, GitHub, email, with inline SVG icons.
+3. **Education**
+4. **Music**, only if it earns its place. Two or three entries at most.
+5. **Contact**: LinkedIn, GitHub, email, with inline SVG icons.
 
-Content per section is still being decided; the direction is to trim rather than
-carry everything over from the old site. Leave `TODO:` comments where content is
-pending instead of inventing filler.
+There is no Work Experience section, by decision. See What This Site Is.
+
+A project entry is an `h3` holding two links and nothing else: the title, which
+carries a mark and goes to the running project, and a GitHub mark pushed to the
+right edge of the column, in line with the theme toggle above it. Below it sits
+one paragraph of two or three sentences.
+
+The marks are drawn, not borrowed: Greenlight is a filled disc with its
+highlight cut out by an SVG `mask`, so the shine is the real background showing
+through and never has to be recolored for dark mode. Emoji were tried first and
+dropped, since they are full color and render differently on every platform.
+Raster logos are not an option for the same reason, plus they need a second
+version for dark mode and do not scale with the type.
+
+Leave `TODO:` comments where content is pending instead of inventing filler.
 
 ## Files
 
 - `index.html`: the entire site.
 - `styles.css`: all styling. No inline `<style>` blocks.
 - `script.js`: theme toggle only.
-- `washu_logo.png`, `rdfz_logo.png`: kept from the old site, not yet used.
+- `washu_logo.png`: kept from the old site, not used, kept pending a decision.
 
 `<footer>` sits outside `<main>`, since a footer inside it would belong to that
 section rather than to the page; both carry the column width. There is a
-`@media print` block that forces the light palette, because a CV gets printed.
+`@media print` block that forces the light palette. Nobody is expected to print
+this page; the block is cheap insurance, not a requirement.
 
-Still missing, all of which need the real copy first: a meta description, Open
-Graph tags, and a favicon.
+The favicon is an inline SVG data URI in `<head>`, so the palette lives in one
+place and there is no binary in the repository. There is no `og:image`: a link
+preview card would need a 1200x630 raster, which is the one thing this design
+has no way to produce honestly.
 
 ## Working Agreement
 
 Discuss and settle design decisions before writing code. Jiaming wants to reason
-through the design, not receive a finished page and react to it. Verify claimed
-values against the source rather than asserting them from memory.
+through the design, not receive a finished page and react to it.
+
+Verify claimed values against the source rather than asserting them from memory.
+This applies to the design reference's stylesheet, to the project repositories
+that the copy describes, and to counts and numbers of every kind.
+
+Give a real opinion when asked, including the reason a request might be a bad
+idea, and then do what he decides. Several of the better calls on this page came
+from him pushing back, and several came from a stated objection being overruled.
