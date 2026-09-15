@@ -126,6 +126,11 @@ a visitor reading three sentences does not, and it is the single most
 resume-like move available to a page whose whole premise is that it is not one.
 Never bold a stack name.
 
+**The intro carries no bold at all.** Two versions were built and both were
+withdrawn: five keyword spans, and a single one on the claim, the interactions
+people actually touch. The paragraph holds on its own sentences, and a link
+underline already runs through its first line.
+
 **Section headings must be larger than body text.** An earlier version set them
 to 15px uppercase, smaller than everything around them; it was rejected on
 sight.
