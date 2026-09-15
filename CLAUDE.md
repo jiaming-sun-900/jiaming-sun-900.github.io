@@ -219,7 +219,7 @@ carries a mark and goes to the running project, and a GitHub mark pushed to the
 right edge of the column, in line with the theme toggle above it. Below it sits
 one paragraph of two or three sentences.
 
-The third entry, **This Site**, is the one exception, and the exception is
+The third entry, **Personal Website**, is the one exception, and the exception is
 deliberate. Its running thing is the page you are already on, so its title is a
 `span` rather than an anchor and carries no underline: an underline that leads
 nowhere would be the only broken promise on the page. The repository mark beside
