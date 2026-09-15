@@ -316,6 +316,14 @@ under the contact row. **Update that date whenever the content changes.** A date
 that has gone stale is worse than no date at all, and nothing in the build will
 catch it, because there is no build.
 
+The same goes for one link. The John Mayer link in the intro points at
+`youtu.be/GWFToTcoVwI?t=6089`, one minute and forty-one into a third-party
+upload of Where the Light Is, Live in LA, 2007. A deep link to a specific moment
+of a specific show is worth more than a name on its own, which is why it is
+there, but the upload is not the artist's own channel and could be taken down.
+Check it when the date gets updated. Nothing else on the page can rot this way:
+every other link goes to a repository, a running project, or a university.
+
 The favicon is an inline SVG data URI in `<head>`, so the palette lives in one
 place and there is nothing to regenerate if the palette changes.
 
