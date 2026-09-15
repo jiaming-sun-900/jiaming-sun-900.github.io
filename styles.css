@@ -298,8 +298,11 @@ h3 {
   a { text-decoration: none; }
   /* 0.55 opacity is a hover affordance, and paper has no hover. */
   .repo { opacity: 1; }
-  .colophon { margin-top: 2rem; }
   section, footer { margin-top: 2rem; }
+  /* .foot carries the space above the colophon now, and 5.5em of it is a
+     screen measurement. The colophon's own margin is 0, so nothing else here
+     needs a reset. */
+  .foot { margin-top: 2rem; }
   h1 { font-size: 24pt; }
   h2 { font-size: 16pt; }
   h3 { font-size: 12pt; }
