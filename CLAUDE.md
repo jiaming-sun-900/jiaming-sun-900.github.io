@@ -224,6 +224,25 @@ quickly, which is why it is not `linear`.
   avoid a flash of the wrong theme. The external `script.js` only handles clicks.
 - Honors `prefers-reduced-motion`.
 
+**A saved choice is permanent, and that is correct.** It is the first test in the
+head script, so once it exists the solar calculation and the system setting are
+never consulted again. This looks like a bug from the inside: open the page at
+eight in the morning, after an evening of clicking the toggle, and it is still
+ink. It was almost fixed by storing the choice together with the day or night it
+was made in and discarding it when that changed. Do not do this.
+
+The reason is who actually hits it. The readers of this page click a link once:
+they have no saved value, so the sun logic runs in full every time, which is the
+only moment it was ever for. The only people who accumulate a saved choice are
+whoever built the page and a returning visitor who deliberately reached for the
+toggle, and for that visitor honoring the click is the whole point. Expiring it
+would answer a plain instruction with "that was only a suggestion", and
+"I set this to dark, why did it change" is a worse feeling than a missed
+surprise, because one breaks an action and the other only withholds a flourish.
+What looks like a broken feature here is a side effect of building the thing.
+To watch the automatic behavior, clear `localStorage` or open a private window;
+do not change the page.
+
 Two richer transitions were built and rejected. Do not reintroduce either:
 
 - A draggable aircraft window shade borrowed from [mikes.cv](https://www.mikes.cv):
