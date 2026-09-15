@@ -137,6 +137,14 @@ h3 {
 
 .entries p { margin: 5px 0 0; }
 
+/* A run-in bold lead, one per entry, always the opening phrase and never a
+   keyword picked out of the middle of a sentence. In the same position every
+   time it reads as structure, the way a dictionary entry does; scattered
+   through the prose it would read as a resume, which is the one thing this
+   page is not. 600 is the weight the headings already use, so this introduces
+   no new one. */
+.entries p strong { font-weight: 600; }
+
 /* The title links to the live project; the mark beside it is the second door,
    to the code. Sized in em so it tracks the heading, and held back at 0.55
    opacity so it reads as an afterthought to the name rather than competing

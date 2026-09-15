@@ -116,6 +116,16 @@ name stopped reading as the anchor. Holding the body at 24px on a phone set
 about 27 characters to the line in a 327px column, well under the 35 to 40 that
 reads as prose, so every line broke early.
 
+**Bold inside body text is a run-in lead, not a highlighter.** Each project
+paragraph opens with its first phrase in weight 600, and that is the only bold
+in any body copy on the page. Because it is in the same position every time it
+reads as structure, the way a dictionary entry does. The rejected version was
+the resume's habit, keywords picked out of the middle of sentences: technology
+names, numbers, award titles. A recruiter scanning for six seconds needs that;
+a visitor reading three sentences does not, and it is the single most
+resume-like move available to a page whose whole premise is that it is not one.
+Never bold a stack name.
+
 **Section headings must be larger than body text.** An earlier version set them
 to 15px uppercase, smaller than everything around them; it was rejected on
 sight.
