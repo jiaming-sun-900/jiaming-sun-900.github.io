@@ -105,6 +105,12 @@ out and then reverted: a flat offset pulled the name from 2.40x body down to
 | Entry title (`h3`) | 29px | 1.20x | 600 | 24 |
 | Body, everything else | 24px | 1.00x | 400 | 24 |
 
+Below 700px the body cannot shrink, since 24px is the floor, so the scale above
+it is compressed as a whole: 40 / 32 / 27 / 24, or 1.67x / 1.33x / 1.125x /
+1.00x. Shrinking only the name was tried and is wrong: it left `h1` at 40px
+against an `h2` still at 38px, five percent apart, and the name stopped reading
+as the anchor of the page.
+
 **Section headings must be larger than body text.** An earlier version set them
 to 15px uppercase, smaller than everything around them; it was rejected on
 sight.
@@ -144,6 +150,12 @@ pinned to the viewport edge.
 - Hierarchy comes from type size, weight, and space. That is the whole toolkit.
 
 ## Theme Toggle
+
+There is exactly **one** `<meta name="theme-color">`, and both scripts keep it in
+step with the page. Do not split it into a pair keyed to `prefers-color-scheme`:
+the theme comes from three sources, a saved choice, then the hour, then the
+system, so a media-keyed meta leaves the browser chrome ivory while the page is
+ink. That shipped once.
 
 A single icon button at the **top right of the content column**, vertically
 centered against the name, on the same line as it. A moon in light mode, a sun
@@ -193,9 +205,14 @@ carries a mark and goes to the running project, and a GitHub mark pushed to the
 right edge of the column, in line with the theme toggle above it. Below it sits
 one paragraph of two or three sentences.
 
-The marks are drawn, not borrowed: Greenlight is a filled disc with its
-highlight cut out by an SVG `mask`, so the shine is the real background showing
-through and never has to be recolored for dark mode. Emoji were tried first and
+The marks are drawn, not borrowed, and both are the same shape at the same
+weight: a filled disc with something cut out of it by an SVG `mask`, so the
+cut-out is the real background showing through and never has to be recolored for
+dark mode. Greenlight's cut is a highlight; Omni Geo Quiz's is a tilted compass
+needle. A stroked globe was drawn four ways first, flat-lined, curved into a
+real graticule, ringed, inverted, and every version read lighter than Greenlight
+beside it. Matching the weight mattered more than being literal about the
+subject. Emoji were tried first and
 dropped, since they are full color and render differently on every platform.
 Raster logos are not an option for the same reason, plus they need a second
 version for dark mode and do not scale with the type.
@@ -207,12 +224,21 @@ Leave `TODO:` comments where content is pending instead of inventing filler.
 - `index.html`: the entire site.
 - `styles.css`: all styling. No inline `<style>` blocks.
 - `script.js`: theme toggle only.
-- `washu_logo.png`: kept from the old site, not used, kept pending a decision.
+
+There are no other files. `washu_logo.png` was the last binary in the repository
+and was deleted: every mark on this page is drawn, scales with the type, and
+needs no second version for dark mode, so a raster logo would have been the one
+thing breaking that rule.
 
 `<footer>` sits outside `<main>`, since a footer inside it would belong to that
 section rather than to the page; both carry the column width. There is a
 `@media print` block that forces the light palette. Nobody is expected to print
 this page; the block is cheap insurance, not a requirement.
+
+The colophon carries the city and a hand-written **Last updated** date, centered
+under the contact row. **Update that date whenever the content changes.** A date
+that has gone stale is worse than no date at all, and nothing in the build will
+catch it, because there is no build.
 
 The favicon is an inline SVG data URI in `<head>`, so the palette lives in one
 place and there is no binary in the repository. There is no `og:image`: a link

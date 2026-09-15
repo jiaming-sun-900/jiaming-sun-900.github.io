@@ -16,9 +16,13 @@
     );
   }
 
+  var chrome = document.querySelector('meta[name="theme-color"]');
+
   function apply(dark) {
     if (dark) root.dataset.theme = 'dark';
     else delete root.dataset.theme;
+    // The browser chrome follows the page, not the operating system.
+    if (chrome) chrome.content = dark ? '#1f1e1d' : '#f0eee6';
     label();
   }
 

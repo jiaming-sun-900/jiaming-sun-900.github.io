@@ -60,6 +60,11 @@ a {
   transition: text-decoration-thickness 0.15s ease;
 }
 a:hover { text-decoration-thickness: 0.1em; }
+a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
 /* --- Intro ---------------------------------------------------------------- */
 
@@ -161,7 +166,12 @@ h3 {
 
 .contact svg { width: 1em; height: 1em; flex: none; }
 
-.colophon { margin: 1.2em 0 0; font-style: italic; }
+.colophon {
+  margin: 5.5em 0 0;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+}
 
 /* --- Theme toggle --------------------------------------------------------- */
 
@@ -241,6 +251,9 @@ h3 {
   .intro { padding-top: 0; }
   #theme-toggle { display: none; }
   a { text-decoration: none; }
+  /* 0.55 opacity is a hover affordance, and paper has no hover. */
+  .repo { opacity: 1; }
+  .colophon { margin-top: 2rem; }
   section, footer { margin-top: 2rem; }
   h1 { font-size: 24pt; }
   h2 { font-size: 16pt; }
@@ -249,10 +262,21 @@ h3 {
 
 /* --- Narrow screens ------------------------------------------------------- */
 
+/* The body cannot shrink here: 24px is the floor. So the scale above it is
+   compressed as a whole rather than only at the top. Dropping the name alone to
+   40px and leaving h2 at 38px would put them within 5 percent of each other and
+   the name would stop being the anchor of the page. `opsz` follows the new size
+   for the same reason it does everywhere else. */
 @media (max-width: 700px) {
   body { padding: 0 24px 112px; }
   .intro { padding-top: 96px; }
-  h1 { font-size: 2.5rem; }  /* 40px */
+  h1 {
+    font-variation-settings: "opsz" 40;
+    font-size: 2.5rem;                  /* 40px, 1.67x body */
+  }
+  h2 { font-size: 2rem; }               /* 32px, 1.33x body */
+  h3 { font-size: 1.6875rem; }          /* 27px, 1.125x body */
+  .repo svg { width: 26px; height: 26px; }
   section { margin-top: 3.5rem; }
   footer { margin-top: 3.5rem; }
 }
