@@ -137,18 +137,6 @@ h3 {
 
 .entries p { margin: 5px 0 0; }
 
-/* One bold in the intro and a run-in lead on each entry. Those four are the
-   only bold in body copy on the page.
-
-   The intro's is the exception that proves the rule: it is mid-sentence, which
-   nothing else is, and it is allowed because it marks the claim rather than the
-   credentials. The version that was turned down bolded biomedical engineering,
-   computer science, software, web products, and electric guitar, five spans in
-   four lines, which speckles the paragraph, fights the link underline on the
-   same line, and emphasises the half of the intro that Education already states
-   as plain fact. */
-.lede strong { font-weight: 600; }
-
 /* A run-in bold lead, one per entry, always the opening phrase and never a
    keyword picked out of the middle of a sentence. In the same position every
    time it reads as structure, the way a dictionary entry does; scattered
