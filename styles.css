@@ -262,21 +262,29 @@ h3 {
 
 /* --- Narrow screens ------------------------------------------------------- */
 
-/* The body cannot shrink here: 24px is the floor. So the scale above it is
-   compressed as a whole rather than only at the top. Dropping the name alone to
-   40px and leaving h2 at 38px would put them within 5 percent of each other and
-   the name would stop being the anchor of the page. `opsz` follows the new size
-   for the same reason it does everywhere else. */
+/* 24px is the floor on a desktop, not on a phone. In a 327px column it sets
+   about 27 characters to the line, well under the 35 to 40 that reads as prose,
+   so every line breaks early and the rag goes to pieces. 20px brings it back to
+   roughly 33.
+
+   The scale is recomputed from the new body, not nudged. h2 and h3 keep their
+   desktop ratios exactly; only the name drops, from 2.40x to 2.00x, because at
+   2.40x it would collide with the theme toggle on a 375px screen. `opsz`
+   follows the size, as it does everywhere else. */
 @media (max-width: 700px) {
-  body { padding: 0 24px 112px; }
+  body {
+    padding: 0 24px 112px;
+    font-size: 1.25rem;                 /* 20px */
+  }
   .intro { padding-top: 96px; }
   h1 {
     font-variation-settings: "opsz" 40;
-    font-size: 2.5rem;                  /* 40px, 1.67x body */
+    font-size: 2.5rem;                  /* 40px, 2.00x body */
   }
-  h2 { font-size: 2rem; }               /* 32px, 1.33x body */
-  h3 { font-size: 1.6875rem; }          /* 27px, 1.125x body */
-  .repo svg { width: 26px; height: 26px; }
+  h2 { font-size: 2rem; }               /* 32px, 1.60x body */
+  h3 { font-size: 1.5rem; }             /* 24px, 1.20x body */
+  .repo svg { width: 24px; height: 24px; }
+  .contact { gap: 28px; }
   section { margin-top: 3.5rem; }
   footer { margin-top: 3.5rem; }
 }

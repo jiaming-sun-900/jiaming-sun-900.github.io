@@ -105,19 +105,26 @@ out and then reverted: a flat offset pulled the name from 2.40x body down to
 | Entry title (`h3`) | 29px | 1.20x | 600 | 24 |
 | Body, everything else | 24px | 1.00x | 400 | 24 |
 
-Below 700px the body cannot shrink, since 24px is the floor, so the scale above
-it is compressed as a whole: 40 / 32 / 27 / 24, or 1.67x / 1.33x / 1.125x /
-1.00x. Shrinking only the name was tried and is wrong: it left `h1` at 40px
-against an `h2` still at 38px, five percent apart, and the name stopped reading
-as the anchor of the page.
+Below 700px the body is **20px** and the scale is recomputed from it:
+40 / 32 / 24 / 20, or 2.00x / 1.60x / 1.20x / 1.00x. `h2` and `h3` keep their
+desktop ratios exactly; only the name drops, from 2.40x to 2.00x, because at
+2.40x it collides with the theme toggle on a 375px screen.
+
+Two wrong versions came first, both worth remembering. Shrinking only the name
+left `h1` at 40px against an `h2` still at 38px, five percent apart, and the
+name stopped reading as the anchor. Holding the body at 24px on a phone set
+about 27 characters to the line in a 327px column, well under the 35 to 40 that
+reads as prose, so every line broke early.
 
 **Section headings must be larger than body text.** An earlier version set them
 to 15px uppercase, smaller than everything around them; it was rejected on
 sight.
 
-**24px is the floor.** Nothing on this page is smaller than the body, including
-the things a resume would shrink: source links, dates, the colophon. If
-something needs to recede, italicise it or drop its opacity; do not shrink it.
+**Nothing is smaller than the body**, including the things a resume would
+shrink: source links, dates, the colophon. If something needs to recede,
+italicise it or drop its opacity; do not shrink it. The body itself is 24px on a
+desktop and 20px below 700px, and those are the two floors. The rule is that
+there is one text size per breakpoint, not that 24 is sacred.
 
 Body line height is 1.6, headings 1.1 to 1.2. Do not set
 `-webkit-font-smoothing: antialiased`: it thins the strokes on macOS and made
