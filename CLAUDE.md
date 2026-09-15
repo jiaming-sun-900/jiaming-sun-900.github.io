@@ -232,10 +232,13 @@ Leave `TODO:` comments where content is pending instead of inventing filler.
 - `styles.css`: all styling. No inline `<style>` blocks.
 - `script.js`: theme toggle only.
 
-There are no other files. `washu_logo.png` was the last binary in the repository
-and was deleted: every mark on this page is drawn, scales with the type, and
-needs no second version for dark mode, so a raster logo would have been the one
-thing breaking that rule.
+- `og.html` and `og.png`: the link preview card and its source. See below.
+
+`washu_logo.png` was deleted: every mark on this page is drawn, scales with the
+type, and needs no second version for dark mode, so a raster logo would have
+been the one thing breaking that rule. `og.png` is the single exception to
+"nothing on this page is a raster", and it is not on this page: it is the card
+other sites render, where a raster is the only format accepted.
 
 `<footer>` sits outside `<main>`, since a footer inside it would belong to that
 section rather than to the page; both carry the column width. There is a
@@ -248,9 +251,25 @@ that has gone stale is worse than no date at all, and nothing in the build will
 catch it, because there is no build.
 
 The favicon is an inline SVG data URI in `<head>`, so the palette lives in one
-place and there is no binary in the repository. There is no `og:image`: a link
-preview card would need a 1200x630 raster, which is the one thing this design
-has no way to produce honestly.
+place and there is nothing to regenerate if the palette changes.
+
+`og.png` is the link preview card, 1200x630, and `og.html` is the source it is
+rendered from: the same two colors, the real Newsreader, the name and the one
+line from `og:description`. It is the page's first screen, not a graphic
+invented for social media, which is the only way this design can produce a
+raster honestly. Regenerate it after changing `og.html`, never by hand:
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+  --disable-gpu --hide-scrollbars --force-device-scale-factor=2 \
+  --window-size=1200,630 --virtual-time-budget=6000 \
+  --screenshot=og@2x.png file://$PWD/og.html
+sips -Z 1200 og@2x.png --out og.png && rm og@2x.png
+```
+
+It renders at 2x and downsamples, because text screenshotted at 1x reads soft
+once a platform scales the card. `og.html` is not linked from anywhere; it is
+committed so the image stays reproducible.
 
 ## Working Agreement
 
