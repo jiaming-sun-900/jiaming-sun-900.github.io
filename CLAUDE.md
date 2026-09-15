@@ -151,8 +151,15 @@ pinned to the viewport edge.
 
 ### Restraint Rules
 
-- No animated backgrounds, no scroll-triggered effects, no back-to-top button,
-  no cards, no shadows, no boxes.
+- No animated backgrounds, no scroll-triggered effects, no cards, no shadows,
+  no boxes.
+- There is a back-to-top link, but read the shape before changing it: a plain
+  anchor to `#top`, 36px, hung on the **right edge of the column** level with the
+  last line of the colophon, always present. It is the bottom of the line the
+  theme toggle and the repository marks make down that edge, so every glyph on
+  the page sits on one axis. What was rejected is the other kind, a pill that
+  floats in a corner of the viewport and appears once you scroll. That one breaks
+  two rules at once.
 - Icons are inline SVG using `currentColor`. Never an icon font.
 - Hierarchy comes from type size, weight, and space. That is the whole toolkit.
 
@@ -166,7 +173,7 @@ ink. That shipped once.
 
 A single icon button at the **top right of the content column**, vertically
 centered against the name, on the same line as it. A moon in light mode, a sun
-in dark mode, 30px, line-style, `currentColor`, held at `opacity: 0.55` until
+in dark mode, 36px, line-style, `currentColor`, held at `opacity: 0.55` until
 hover. Not fixed to the viewport, not a pill switch.
 
 On hover both icons scale to 1.15; the moon also tilts slightly, and the sun's

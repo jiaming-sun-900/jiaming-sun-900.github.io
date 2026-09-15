@@ -25,7 +25,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { color-scheme: light; }
+html { color-scheme: light; scroll-behavior: smooth; }
 [data-theme="dark"] { color-scheme: dark; }
 
 /* No -webkit-font-smoothing here on purpose: `antialiased` thins the strokes on
@@ -166,12 +166,36 @@ h3 {
 
 .contact svg { width: 1em; height: 1em; flex: none; }
 
+/* The colophon stays centered in the full column; the arrow is taken out of
+   flow and hung on the right edge of the same band, so it lands at the foot of
+   the line the theme toggle and the two repository marks already make down that
+   edge. Centering the pair together instead would pull the text off center by
+   half the arrow. */
+.foot { position: relative; margin-top: 5.5em; }
+
 .colophon {
-  margin: 5.5em 0 0;
+  margin: 0;
   text-align: center;
   font-style: italic;
   line-height: 1.5;
 }
+
+/* A plain anchor to the top of the document, not a pill that floats in the
+   corner of the viewport: everything lives inside the column, and this is no
+   exception. It is always there rather than appearing after a scroll, so there
+   is nothing to trigger. `bottom: 0` sets the 36px glyph exactly on the 36px
+   line box of the last line, which is where the date sits. */
+.to-top {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  text-decoration: none;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.to-top:hover, .to-top:focus-visible { opacity: 1; transform: translateY(-3px); }
+.to-top svg { display: block; width: 36px; height: 36px; }
 
 /* --- Theme toggle --------------------------------------------------------- */
 
@@ -232,6 +256,7 @@ h3 {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
+  html { scroll-behavior: auto; }
 }
 
 /* --- Print -----------------------------------------------------------------
@@ -249,7 +274,7 @@ h3 {
   }
   main, footer { max-width: none; }
   .intro { padding-top: 0; }
-  #theme-toggle { display: none; }
+  #theme-toggle, .to-top { display: none; }
   a { text-decoration: none; }
   /* 0.55 opacity is a hover affordance, and paper has no hover. */
   .repo { opacity: 1; }
@@ -284,6 +309,7 @@ h3 {
   h2 { font-size: 2rem; }               /* 32px, 1.60x body */
   h3 { font-size: 1.5rem; }             /* 24px, 1.20x body */
   .repo svg { width: 24px; height: 24px; }
+  .to-top svg { width: 30px; height: 30px; }
   .contact { gap: 28px; }
   section { margin-top: 3.5rem; }
   footer { margin-top: 3.5rem; }
