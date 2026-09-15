@@ -219,11 +219,18 @@ carries a mark and goes to the running project, and a GitHub mark pushed to the
 right edge of the column, in line with the theme toggle above it. Below it sits
 one paragraph of two or three sentences.
 
+The third entry, **This Site**, is the one exception, and the exception is
+deliberate. Its running thing is the page you are already on, so its title is a
+`span` rather than an anchor and carries no underline: an underline that leads
+nowhere would be the only broken promise on the page. The repository mark beside
+it is the only door. Its own mark is three lines cut out of the disc, the last
+one short, a paragraph seen from far enough away.
+
 The marks are drawn, not borrowed, and both are the same shape at the same
 weight: a filled disc with something cut out of it by an SVG `mask`, so the
 cut-out is the real background showing through and never has to be recolored for
 dark mode. Greenlight's cut is a highlight; Omni Geo Quiz's is a tilted compass
-needle. A stroked globe was drawn four ways first, flat-lined, curved into a
+needle; this site's is three lines of a paragraph. A stroked globe was drawn four ways first, flat-lined, curved into a
 real graticule, ringed, inverted, and every version read lighter than Greenlight
 beside it. Matching the weight mattered more than being literal about the
 subject. Emoji were tried first and

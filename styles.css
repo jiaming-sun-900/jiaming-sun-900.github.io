@@ -148,6 +148,12 @@ h3 {
   vertical-align: -0.14em;
 }
 
+/* The third entry has no live link: the running thing is this page. So its
+   title is a span, not an anchor, and it carries no underline. An underline
+   that leads nowhere is a broken promise, and it would be the only one on the
+   page. The repository mark beside it stays a link, and is the only door. It
+   needs no rule of its own: a span carries no underline to begin with. */
+
 .repo {
   flex: none;
   text-decoration: none;
