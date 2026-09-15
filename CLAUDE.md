@@ -114,7 +114,7 @@ Two wrong versions came first, both worth remembering. Shrinking only the name
 left `h1` at 40px against an `h2` still at 38px, five percent apart, and the
 name stopped reading as the anchor. Holding the body at 24px on a phone set
 about 27 characters to the line in a 327px column, well under the 35 to 40 that
-reads as prose, so every line broke early.
+reads as prose, so every line broke early. At 20px the same column sets 34.
 
 **Bold inside body text is a run-in lead, not a highlighter.** Each project
 paragraph opens with its first phrase in weight 600, and that is the only bold
@@ -149,8 +149,26 @@ this page read lighter than the reference, which does not set it on body text.
 
 Content column is **860px**, wider than the reference's 620px. 620px is the
 optimum for running prose; this page mixes prose with entries, which look thin
-and stranded in a column that narrow. At 24px, 860px is roughly 62 characters,
-still inside the comfortable range.
+and stranded in a column that narrow. At 24px, 860px sets 79 characters to the
+line, measured in the browser rather than estimated. That is a little over the
+45 to 75 usually quoted for running prose, and it is a knowing trade: the
+paragraphs here are three to five lines, not an essay.
+
+Measured across the widths that matter, all with no horizontal overflow
+anywhere from 320px up:
+
+| Viewport | Body | Column | Characters |
+|---|---|---|---|
+| 320px, old iPhone SE | 20px | 272px | 30 |
+| 375 to 390px, most iPhones | 20px | 327 to 342px | 34 |
+| 430px, Pro Max | 20px | 382px | 43 |
+| 768 to 834px, iPad portrait | 24px | 704 to 770px | 65 |
+| 1024px and up, every Mac and the 27 inch | 24px | 860px | 79 |
+
+One pothole, and it is not on any real device: at exactly 700px the narrow
+rules apply to a 652px column, which runs 76 characters at 20px, nearly the
+desktop measure at a smaller size. One pixel wider it drops to 54. It only
+happens in a resized browser window.
 
 **Everything lives inside that column**, including the theme toggle. Nothing is
 pinned to the viewport edge.
