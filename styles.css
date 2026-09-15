@@ -112,7 +112,13 @@ h2 {
 
 .entries { list-style: none; margin: 0; padding: 0; }
 
-.entries > li + li { margin-top: 32px; }
+/* An entry has to be separated from the next one by more than its own lines
+   are separated from each other, or the three of them read as one block. The
+   leading inside a paragraph is 1.6em, and 32px sat below it. 2.3em clears the
+   leading and stays well under the 4.75rem between sections, so the page reads
+   at three levels: line, entry, section. In em, so it follows the body down to
+   46px on a phone rather than needing a second value. */
+.entries > li + li { margin-top: 2.3em; }
 
 /* The entry title and its repository mark are the two ends of a row, so the
    marks stack down the right edge of the column in line with the theme toggle
