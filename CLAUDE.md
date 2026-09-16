@@ -316,13 +316,33 @@ under the contact row. **Update that date whenever the content changes.** A date
 that has gone stale is worse than no date at all, and nothing in the build will
 catch it, because there is no build.
 
-The same goes for one link. The John Mayer link in the intro points at
-`youtu.be/GWFToTcoVwI?t=6089`, one minute and forty-one into a third-party
-upload of Where the Light Is, Live in LA, 2007. A deep link to a specific moment
-of a specific show is worth more than a name on its own, which is why it is
-there, but the upload is not the artist's own channel and could be taken down.
-Check it when the date gets updated. Nothing else on the page can rot this way:
-every other link goes to a repository, a running project, or a university.
+The same goes for one link. The guitar sentence in the intro points at
+`youtu.be/GWFToTcoVwI?t=6089`, one hour and forty-one minutes into a third-party
+upload of Where the Light Is, Live in LA, 2007, where The Heart of Life starts. A
+deep link to a specific moment of a specific show is worth more than a name on
+its own, which is why it is there, but the upload is not the artist's own channel
+and could be taken down. Check it when the date gets updated. Nothing else on the
+page can rot this way: every other link goes to a repository, a running project,
+or a university.
+
+**The anchor text is the song title, not the artist's name.** Clicking it opens a
+video on YouTube, which is abrupt if the words promised a page about a musician,
+and the fix is the sentence rather than a warning: the link sits on
+`The Heart of Life`, after a colon and "I keep going back to", so the prose
+itself says a recording is on the other side. What was rejected is the resume
+move, a "(video)" label or a small play glyph trailing the link, which annotates
+instead of writing and would have put the only icon in the page's body copy. The
+link opens in a new tab like every other, so the page is never lost; the only
+real surprise left is sound, and naming a song covers that.
+
+Two heavier versions of that clause were written and cut. "the one I keep going
+back to is" leaves `the one` without a clean antecedent: the nouns before the
+colon are guitar, blues, and direction, so the reader only resolves it on
+reaching the title. "one of his pieces that I keep going back to is" fixes the
+antecedent but costs twice: `piece` means an instrumental or a classical work,
+not a song with lyrics, and nine words of scaffolding stand in front of the
+payload. The colon already announces an example, so nothing needs to introduce
+it a second time.
 
 The favicon is an inline SVG data URI in `<head>`, so the palette lives in one
 place and there is nothing to regenerate if the palette changes.
