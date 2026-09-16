@@ -122,17 +122,41 @@ h2 {
 
 /* The entry title and its repository mark are the two ends of a row, so the
    marks stack down the right edge of the column in line with the theme toggle
-   above them. */
+   above them. The row wraps, so when a title is too long to share a line with
+   what sits at the far end, that thing moves to the next line instead of being
+   pushed out of the column. The gap is row 0, column 24px: a wrapped second
+   line needs no extra space above it, since the line box already has it. */
 h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 0 24px;
   font-size: 1.8125rem;                 /* 29px, 1.20x body */
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0;
   margin: 0;
+}
+
+/* The years take the slot the repository marks hold in the project entries, so
+   the right edge of the column reads as one axis the whole way down: the theme
+   toggle, three marks, this, and the arrow at the foot. Body size, weight 400,
+   italic, because dates recede by slant on this page and never by color or by
+   shrinking.
+
+   `margin-left: auto` rather than leaning on the row's `space-between`: below
+   430px the school name fills the row and the years wrap onto a line of their
+   own, where `space-between` has nothing to push against and would leave them
+   at the left edge. The auto margin holds them flush right on either line.
+   Measured: at 320 and 375 the years drop to their own line and still land on
+   the column edge; at 860 they stay on the heading line. */
+.years {
+  font-size: 1.5rem;                    /* 24px, body size, the floor */
+  font-weight: 400;
+  font-style: italic;
+  flex: none;
+  margin-left: auto;
 }
 
 .entries p { margin: 5px 0 0; }
@@ -331,6 +355,7 @@ h3 {
   }
   h2 { font-size: 2rem; }               /* 32px, 1.60x body */
   h3 { font-size: 1.5rem; }             /* 24px, 1.20x body */
+  .years { font-size: 1.25rem; }        /* 20px, body size, the narrow floor */
   .repo svg { width: 24px; height: 24px; }
   .to-top svg { width: 30px; height: 30px; }
   .contact { gap: 28px; }

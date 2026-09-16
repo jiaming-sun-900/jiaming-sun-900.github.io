@@ -260,12 +260,20 @@ One page, `index.html`, read top to bottom:
    on the page. The name and the intro share the first screen; a first screen
    holding nothing but a name reads as unprofessional.
 2. **Projects**
-3. **Education**: the degree, then the years in italic on a second line,
-   `2023-2028, expected`. The years are there because a lone degree line leaves
-   a reader unable to tell a sophomore from an alum, and the section exists to
-   state a plain fact. `expected` is spelled out after a comma rather than set
-   in parentheses: nothing else on the page annotates itself in parentheses, and
-   this would have been the first.
+3. **Education**: the school on the left of the `h3` and the years, `2023-2028`,
+   pushed to the right edge of the same line in italic at body size. The years
+   are there because a lone degree line leaves a reader unable to tell a
+   sophomore from an alum, and the section exists to state a plain fact. They
+   take the slot the repository marks hold in the project entries, so the right
+   edge of the column stays one axis from the theme toggle down to the arrow at
+   the foot. They were tried on a second line under the degree first, and that
+   version put a date on the left margin where nothing else on the page sits.
+
+   The heading row wraps. Below 430px the school name fills the line and the
+   years fall to a line of their own, still flush right, which is why they carry
+   `margin-left: auto` instead of leaning on the row's `space-between`. No
+   `expected` after the year: the page annotates nothing in parentheses or in
+   asides, and a degree range reads as a plan without being told.
 4. **Music**, only if it earns its place. Two or three entries at most. It has
    not been written yet; what is in `index.html` is a `TODO:` comment, which is
    why nothing shows up in a browser. As of September 2026 the material exists
