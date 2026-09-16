@@ -180,7 +180,7 @@ pinned to the viewport edge.
 - **Never use contractions.** Write "I am", not "I'm"; "do not", not "don't".
 - **Every link off this site opens in a new tab**: `target="_blank"` with
   `rel="noopener noreferrer"`. A visitor who clicks washu.edu should not lose the
-  page. `mailto:` links are exempt.
+  page.
 
 ### Restraint Rules
 
@@ -282,7 +282,10 @@ One page, `index.html`, read top to bottom:
    second paragraph, so a Music section that is more prose about John Mayer only
    repeats it. It earns its place by holding what the intro cannot, something
    with a link on the other side: a recording, a set, an instrument.
-5. **Contact**: LinkedIn, GitHub, email, with inline SVG icons.
+5. **Contact**: LinkedIn and GitHub, with inline SVG icons. The email link
+   was removed at Jiaming's request in September 2026. Do not restore it, and
+   do not put the address anywhere else on the page: LinkedIn carries the
+   message button, so the page still has a way to reach him.
 
 There is no Work Experience section, by decision. See What This Site Is.
 
