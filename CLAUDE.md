@@ -33,8 +33,8 @@ What follows from that, and it has already changed the page once:
   sentences, not the one line a resume allots, and links to the running thing.
 - **There is no Work Experience section.** It was written, then deleted. Listing
   every lab and internship is exactly what makes a site indistinguishable from a
-  LinkedIn export. Education stays, because it is two lines and it is the only
-  place the page states a plain fact about who he is.
+  LinkedIn export. Education stays, because it is three lines and it is the
+  only place the page states a plain fact about who he is.
 - **The prose is his, not a summary.** Guitar and aviation are in the intro on
   purpose. Cut a claim before a specific: "I love naming aircraft types from the
   window seat" survives where "aviation enthusiast" does not.
@@ -260,8 +260,20 @@ One page, `index.html`, read top to bottom:
    on the page. The name and the intro share the first screen; a first screen
    holding nothing but a name reads as unprofessional.
 2. **Projects**
-3. **Education**
-4. **Music**, only if it earns its place. Two or three entries at most.
+3. **Education**: the degree, then the years in italic on a second line,
+   `2023-2028, expected`. The years are there because a lone degree line leaves
+   a reader unable to tell a sophomore from an alum, and the section exists to
+   state a plain fact. `expected` is spelled out after a comma rather than set
+   in parentheses: nothing else on the page annotates itself in parentheses, and
+   this would have been the first.
+4. **Music**, only if it earns its place. Two or three entries at most. It has
+   not been written yet; what is in `index.html` is a `TODO:` comment, which is
+   why nothing shows up in a browser. As of September 2026 the material exists
+   and the target is mid-October 2026. The bar rose when the intro took the
+   guitar: six years, the blues, and a deep link to one song already live in the
+   second paragraph, so a Music section that is more prose about John Mayer only
+   repeats it. It earns its place by holding what the intro cannot, something
+   with a link on the other side: a recording, a set, an instrument.
 5. **Contact**: LinkedIn, GitHub, email, with inline SVG icons.
 
 There is no Work Experience section, by decision. See What This Site Is.
