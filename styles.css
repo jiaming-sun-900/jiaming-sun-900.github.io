@@ -327,6 +327,9 @@ h3 {
      screen measurement. The colophon's own margin is 0, so nothing else here
      needs a reset. */
   .foot { margin-top: 2rem; }
+  /* Everything else here is in pt; the years were the one size left in px, so
+     they printed at about 18pt against a 12pt school name. */
+  .years { font-size: 11pt; }
   h1 { font-size: 24pt; }
   h2 { font-size: 16pt; }
   h3 { font-size: 12pt; }

@@ -332,7 +332,9 @@ other sites render, where a raster is the only format accepted.
 `<footer>` sits outside `<main>`, since a footer inside it would belong to that
 section rather than to the page; both carry the column width. There is a
 `@media print` block that forces the light palette. Nobody is expected to print
-this page; the block is cheap insurance, not a requirement.
+this page; the block is cheap insurance, not a requirement. Everything in it is
+sized in pt, including `.years`, which printed at about 18pt against a 12pt
+school name while it was the one rule left in px.
 
 The colophon carries the city and a hand-written **Last updated** date, centered
 under the contact row. **Update that date whenever the content changes.** A date
