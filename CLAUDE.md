@@ -193,6 +193,13 @@ pinned to the viewport edge.
   the page sits on one axis. What was rejected is the other kind, a pill that
   floats in a corner of the viewport and appears once you scroll. That one breaks
   two rules at once.
+- **Below 360px the arrow takes a line of its own**, still flush to the column
+  edge. It is out of flow, so nothing pushed it off the colophon when the
+  colophon grew to meet it: measured, at 320px the second line overran the
+  glyph by 10px, and at 375px there is 18px of clearance. This is not for a
+  phone anyone still carries. 320px is what a 1280px desktop window becomes at
+  400% zoom, and browsers go to 500%, so the person covered by the glyph is the
+  one who zoomed in to read. The axis holds at every width above 360.
 - Icons are inline SVG using `currentColor`. Never an icon font.
 - Hierarchy comes from type size, weight, and space. That is the whole toolkit.
 

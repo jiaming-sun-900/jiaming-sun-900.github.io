@@ -365,3 +365,22 @@ h3 {
   section { margin-top: 3.5rem; }
   footer { margin-top: 3.5rem; }
 }
+
+/* --- The narrowest band -----------------------------------------------------
+
+   The arrow is out of flow, so nothing pushes it off the colophon when the
+   colophon grows to meet it. Measured: at 320px the second line of the
+   colophon overruns the glyph by 10px; at 375px there is 18px of clearance and
+   it only widens from there. So in this one band the arrow leaves the
+   colophon's line and takes one of its own, still flush to the column edge.
+   The axis down the right side is intact at every width above this.
+
+   This is not for a phone anyone still carries: 320px is also what a 1280px
+   desktop window becomes at 400% zoom, and browsers go to 500%. Text covered
+   by a glyph is worst exactly for the person who zoomed in to read it. */
+@media (max-width: 360px) {
+  .foot { display: flex; flex-direction: column; align-items: flex-end; }
+  /* Still centered in the full column, not in what the arrow leaves behind. */
+  .colophon { width: 100%; }
+  .to-top { position: static; margin-top: 0.4em; }
+}
