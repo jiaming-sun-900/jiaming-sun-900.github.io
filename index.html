@@ -35,9 +35,17 @@
      the operating system asks for it or it is currently night where they are.
 
      Night is worked out from the local clock and the sun's declination for
-     today's date, with latitude assumed to be 40 degrees. That is accurate to
-     within about an hour, and unlike fixed hours it moves with the seasons.
-     Real sunrise and sunset would need the visitor's coordinates, which means a
+     today's date, with latitude assumed to be 40 degrees. Unlike fixed hours it
+     moves with the seasons.
+
+     The hour angle is measured from solar noon, which is 12:00 only on standard
+     time: through the eight months of daylight saving the clock runs an hour
+     ahead of the sun, and the page turned dark an hour before sunset. The
+     offset is read off the clock itself, by comparing today against the wider
+     of January's and July's, so it needs no table of rules and no hemisphere.
+
+     What is left is longitude within the timezone, at most half an hour. Real
+     sunrise and sunset would need the visitor's coordinates, which means a
      location permission prompt: too much to ask of a page like this one. */
   (function () {
     var root = document.documentElement;
@@ -47,7 +55,14 @@
     var declination = 23.45 * Math.sin(rad * 360 * (284 + day) / 365);
     var ratio = -Math.tan(40 * rad) * Math.tan(declination * rad);
     var halfDay = ratio <= -1 ? 12 : ratio >= 1 ? 0 : Math.acos(ratio) / rad / 15;
-    var hour = now.getHours() + now.getMinutes() / 60;
+
+    // Standard time is the larger offset of the two solstice months, in either
+    // hemisphere; the difference from today's is 1 while the clocks are forward.
+    var year = now.getFullYear();
+    var standard = Math.max(new Date(year, 0, 1).getTimezoneOffset(),
+                            new Date(year, 6, 1).getTimezoneOffset());
+    var saving = (standard - now.getTimezoneOffset()) / 60;
+    var hour = now.getHours() + now.getMinutes() / 60 - saving;
 
     if (hour < 12 - halfDay || hour >= 12 + halfDay) root.dataset.night = '1';
 
