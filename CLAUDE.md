@@ -301,18 +301,19 @@ carries a mark and goes to the running project, and a GitHub mark pushed to the
 right edge of the column, in line with the theme toggle above it. Below it sits
 one paragraph of two or three sentences.
 
-The third entry, **Personal Website**, is the one exception, and the exception is
+The last entry, **Personal Website**, is the one exception, and the exception is
 deliberate. Its running thing is the page you are already on, so its title is a
 `span` rather than an anchor and carries no underline: an underline that leads
 nowhere would be the only broken promise on the page. The repository mark beside
 it is the only door. Its own mark is three lines cut out of the disc, the last
 one short, a paragraph seen from far enough away.
 
-The marks are drawn, not borrowed, and both are the same shape at the same
+The marks are drawn, not borrowed, and all are the same shape at the same
 weight: a filled disc with something cut out of it by an SVG `mask`, so the
 cut-out is the real background showing through and never has to be recolored for
 dark mode. Greenlight's cut is a highlight; Omni Geo Quiz's is a tilted compass
-needle; this site's is three lines of a paragraph. A stroked globe was drawn four ways first, flat-lined, curved into a
+needle; Rubric Studio's is a check, for the rubric; this site's is three lines of
+a paragraph. A stroked globe was drawn four ways first, flat-lined, curved into a
 real graticule, ringed, inverted, and every version read lighter than Greenlight
 beside it. Matching the weight mattered more than being literal about the
 subject. Emoji were tried first and
@@ -355,7 +356,8 @@ deep link to a specific moment of a specific show is worth more than a name on
 its own, which is why it is there, but the upload is not the artist's own channel
 and could be taken down. Check it when the date gets updated. Nothing else on the
 page can rot this way: every other link goes to a repository, a running project,
-or a university.
+a university, or Mimir, the company where Rubric Studio began. Jiaming asked for
+that company link in September 2026.
 
 **The anchor text is the song title, not the artist's name.** Clicking it opens a
 video on YouTube, which is abrupt if the words promised a page about a musician,
