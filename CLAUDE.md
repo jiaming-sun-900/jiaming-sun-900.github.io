@@ -376,6 +376,16 @@ not a song with lyrics, and nine words of scaffolding stand in front of the
 payload. The colon already announces an example, so nothing needs to introduce
 it a second time.
 
+`<head>` carries one JSON-LD block, a `WebSite` and a `Person`, for search
+engines only. It exists because the name is shared: a computer vision
+researcher and a sociology professor both outrank this page for a bare
+`Jiaming Sun`, and the LinkedIn profile already ranks on its own. `sameAs`
+ties the page to that profile and to GitHub so Google can treat them as one
+person, and `WebSite.name` puts "Jiaming Sun" above the result instead of
+`github.io`. Keep `sameAs` identical to the Contact links. The domain stays
+on `github.io` by decision: a custom domain was discussed in September 2026
+and declined, since it helps memorability far more than ranking.
+
 The favicon is an inline SVG data URI in `<head>`, so the palette lives in one
 place and there is nothing to regenerate if the palette changes.
 

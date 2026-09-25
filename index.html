@@ -20,6 +20,36 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Jiaming Sun, set in Newsreader on warm ivory, above the line: I build software and web products, and I care most about the interactions people actually touch.">
 <meta name="twitter:card" content="summary_large_image">
+<!-- For search engines only; nothing here renders. It tells Google that this
+     page, the LinkedIn profile, and the GitHub account are one person, and that
+     the site is called Jiaming Sun rather than github.io. Keep sameAs in step
+     with the Contact links. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Jiaming Sun",
+      "url": "https://jiaming-sun-900.github.io/"
+    },
+    {
+      "@type": "Person",
+      "name": "Jiaming Sun",
+      "url": "https://jiaming-sun-900.github.io/",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Washington University in St. Louis",
+        "url": "https://washu.edu"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/jiamingsun/",
+        "https://github.com/jiaming-sun-900"
+      ]
+    }
+  ]
+}
+</script>
 <!-- The favicon is the page itself in miniature: ink on the same warm ivory,
      set in a serif. Inline SVG rather than a .ico file, so there is no binary
      in the repository and nothing to regenerate if the palette changes. -->
