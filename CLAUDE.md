@@ -386,6 +386,10 @@ person, and `WebSite.name` puts "Jiaming Sun" above the result instead of
 on `github.io` by decision: a custom domain was discussed in September 2026
 and declined, since it helps memorability far more than ranking.
 
+The `google-site-verification` meta beside it is how Google Search Console
+knows Jiaming owns the site, verified by HTML tag in September 2026. It looks
+like dead weight. Removing it drops the verification.
+
 The favicon is an inline SVG data URI in `<head>`, so the palette lives in one
 place and there is nothing to regenerate if the palette changes.
 
