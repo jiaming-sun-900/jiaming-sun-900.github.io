@@ -356,7 +356,7 @@ deep link to a specific moment of a specific show is worth more than a name on
 its own, which is why it is there, but the upload is not the artist's own channel
 and could be taken down. Check it when the date gets updated. Nothing else on the
 page can rot this way: every other link goes to a repository, a running project,
-a university, or Mimir, the company where Rubric Studio began. Jiaming asked for
+a university, or Mimir Systems, the company where Rubric Studio began. Jiaming asked for
 that company link in September 2026.
 
 **The anchor text is the song title, not the artist's name.** Clicking it opens a
