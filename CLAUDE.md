@@ -311,7 +311,8 @@ one short, a paragraph seen from far enough away.
 The marks are drawn, not borrowed, and all are the same shape at the same
 weight: a filled disc with something cut out of it by an SVG `mask`, so the
 cut-out is the real background showing through and never has to be recolored for
-dark mode. Greenlight's cut is a highlight; Omni Geo Quiz's is a tilted compass
+dark mode. Closure Call's cut is a lightning bolt, for the weather;
+Greenlight's cut is a highlight; Omni Geo Quiz's is a tilted compass
 needle; Rubric Studio's is a check, for the rubric; this site's is three lines of
 a paragraph. A stroked globe was drawn four ways first, flat-lined, curved into a
 real graticule, ringed, inverted, and every version read lighter than Greenlight
