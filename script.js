@@ -34,10 +34,14 @@
     apply(dark);
   });
 
-  // Follow the OS until the visitor makes an explicit choice. Night still wins:
-  // the head script works it out and leaves the answer on the root element.
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+  // Follow the OS until the visitor makes an explicit choice. Night still wins,
+  // worked out afresh by the head script's function, not remembered from load.
+  // Safari before 14 has only the older addListener.
+  var system = matchMedia('(prefers-color-scheme: dark)');
+  function follow(e) {
     try { if (localStorage.getItem('theme')) return; } catch (err) {}
-    apply(e.matches || root.dataset.night === '1');
-  });
+    apply(e.matches || window.isNight());
+  }
+  if (system.addEventListener) system.addEventListener('change', follow);
+  else system.addListener(follow);
 })();

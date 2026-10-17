@@ -9,7 +9,7 @@
      a media-keyed meta would leave the browser chrome ivory while the page was
      ink. The scripts keep this one in step. -->
 <meta name="theme-color" content="#f0eee6">
-<meta name="description" content="Jiaming Sun studies biomedical engineering and computer science at Washington University in St. Louis and builds software and web products, among them Greenlight and Omni Geo Quiz.">
+<meta name="description" content="Jiaming Sun studies biomedical engineering and computer science at Washington University in St. Louis and builds software and web products.">
 <meta name="google-site-verification" content="YpS1-g8TEe9anmJSmaWFElbxRZ8HmE2EvgymONJF-m0">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://jiaming-sun-900.github.io/">
@@ -78,8 +78,9 @@
      What is left is longitude within the timezone, at most half an hour. Real
      sunrise and sunset would need the visitor's coordinates, which means a
      location permission prompt: too much to ask of a page like this one. */
-  (function () {
-    var root = document.documentElement;
+  /* A function rather than a flag, so script.js can ask again later: a tab left
+     open across sunset would otherwise keep the answer from page load. */
+  window.isNight = function () {
     var now = new Date();
     var day = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
     var rad = Math.PI / 180;
@@ -95,14 +96,18 @@
     var saving = (standard - now.getTimezoneOffset()) / 60;
     var hour = now.getHours() + now.getMinutes() / 60 - saving;
 
-    if (hour < 12 - halfDay || hour >= 12 + halfDay) root.dataset.night = '1';
+    return hour < 12 - halfDay || hour >= 12 + halfDay;
+  };
+
+  (function () {
+    var root = document.documentElement;
 
     var saved = null;
     try { saved = localStorage.getItem('theme'); } catch (e) {}
 
     var dark = saved
       ? saved === 'dark'
-      : root.dataset.night === '1' ||
+      : window.isNight() ||
         matchMedia('(prefers-color-scheme: dark)').matches;
 
     if (dark) {
@@ -157,7 +162,7 @@
           tomorrow, and who needs to be told?</strong>
           Live data on weather, river levels, power outages, and road closures
           passes through fixed rules that set the hazard level; an agent built
-          on the Strands SDK can write the briefing but never change the level,
+          on the Strands Agents SDK can write the briefing but never change the level,
           and the manager makes the call, which is saved with its evidence.
           Built with Zoe Wang at
           <a href="https://hackmidwest.com/" target="_blank" rel="noopener noreferrer">Hack Midwest 2026</a>
