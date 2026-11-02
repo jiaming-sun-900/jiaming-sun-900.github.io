@@ -411,6 +411,45 @@ These rules record past decisions, not a ceiling. When a new idea for this page
 conflicts with one of them, say which rule and why it exists, then let Jiaming
 decide.
 
+## Company Stories (planned, not started)
+
+A future page of companies whose stories Jiaming has studied, legendary
+startups and ordinary big companies alike, each with his own note. It comes
+after Flights and Music. Recorded in November 2026; build it only when he asks.
+
+The idea came from a long-running Claude chat in which he goes through one
+company at a time. **Those chat recaps are not the content.** They are written
+by Claude and can be wrong, and a page of company histories would be a writing
+archive, which this site is not. What goes on the page is what he took away.
+
+Agreed direction, to refine when it is built:
+
+- **An index of entries, not a logo wall.** A grid of company logos reads as
+  "companies I worked with", and a recruiter skimming it would believe that.
+  The layout has to say "notes" before it says "logos".
+- **Each entry reuses the project entry shape:** an `h3` with the company's
+  mark and name, the founding year in italic on the right edge (the slot the
+  Education years use), then one paragraph that opens with a bold run-in lead,
+  his one-line takeaway, and two or three sentences in his voice. A short
+  source line links to a real book, interview, or article, so every claim
+  stays checkable without the note retelling the history.
+- **Notes are always visible**, never behind a click. The note is the reason
+  the page exists.
+- **Logos in the two colors only.** Proposed: cut each logo out of the disc,
+  the same as the project marks, so a dozen brands sit at one weight. Where a
+  logo is a wordmark and does not survive that, fall back to a monochrome
+  `currentColor` SVG at a fixed height (Simple Icons is a likely source;
+  check each brand, since not every one is there). Logos are redrawn in the
+  palette, never distorted or combined with anything else.
+- **Jiaming writes every note**, even roughly. Claude tightens it to the copy
+  rules and checks the facts against a source. Never write a note from a chat
+  recap; a company without his note does not go on the page.
+- **Open:** the order (by theme, such as airlines or founders who left big
+  companies, or by the order he studied them), the final logo treatment, and
+  the way in from the home page. Southwest and United are both on his list and
+  are his two most-flown airlines, so those entries could link across to the
+  flights page.
+
 ## Files
 
 - `index.html`: the entire site.
