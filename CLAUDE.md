@@ -12,6 +12,10 @@ nothing. The previous design (dark background, Libre Baskerville, orange/teal
 accents, animated star canvas, four separate pages) is gone. Do not revive any
 of it.
 
+A second page, `/flights`, is planned (see Flights Page). That does not revive
+the old four-page layout. The home page stays one page; the flight log moved
+out because it holds too much to share a page with the portfolio.
+
 ## Local Development
 
 ```bash
@@ -79,6 +83,13 @@ elegance comes from.
 Where something needs to read as secondary (dates, location), use **italic** or
 a lighter weight, not a lighter color. Do not reintroduce `--text-muted` or
 `--text-faint`.
+
+**One scoped exception: tints inside the flight globe.** The globe's land is a
+tint made from the two tokens, roughly `color-mix(in oklab, var(--text) 12%,
+var(--bg))`, not a new hex value. Because it is built from the tokens it swaps
+with the theme by itself: pale ink on ivory in light mode, pale ivory on ink in
+dark mode. Agreed with Jiaming in November 2026. The exception covers the globe
+and its marks only. Text never takes a tint, on any page.
 
 ### Typography
 
@@ -260,7 +271,7 @@ Two richer transitions were built and rejected. Do not reintroduce either:
 
 ## Page Structure
 
-One page, `index.html`, read top to bottom:
+The home page, `index.html`, read top to bottom:
 
 1. **Intro**: name (with the theme toggle beside it), then three or four
    sentences of real prose. Personality lives here, and this is the only prose
@@ -283,8 +294,9 @@ One page, `index.html`, read top to bottom:
    asides, and a degree range reads as a plan without being told.
 4. **Music**, only if it earns its place. Two or three entries at most. It has
    not been written yet; what is in `index.html` is a `TODO:` comment, which is
-   why nothing shows up in a browser. As of September 2026 the material exists
-   and the target is mid-October 2026. The bar rose when the intro took the
+   why nothing shows up in a browser. The material exists. The mid-October 2026
+   target passed, and in November 2026 Jiaming put the flight map ahead of it,
+   so Music waits until Flights ships and has no date. The bar rose when the intro took the
    guitar: six years, the blues, and a deep link to one song already live in the
    second paragraph, so a Music section that is more prose about John Mayer only
    repeats it. It earns its place by holding what the intro cannot, something
@@ -323,6 +335,81 @@ Raster logos are not an option for the same reason, plus they need a second
 version for dark mode and do not scale with the type.
 
 Leave `TODO:` comments where content is pending instead of inventing filler.
+
+## Flights Page (in design)
+
+A second page, `/flights`, documenting Jiaming's flight history, in the spirit
+of the Flighty app but more personal and in this site's design. It ranks ahead
+of the Music section. **Nothing is built yet.** Jiaming is drawing the layout
+and will bring sketches; wait for them before proposing an arrangement.
+
+### Settled (November 2026)
+
+- **Its own page**, not a home page section. The home page gets a way in;
+  which one is still open (below).
+- **A draggable globe** with every flight drawn as a great-circle arc. About
+  760px across on a desktop, capped by viewport height so the whole sphere
+  fits on a laptop screen.
+- **Arcs and airports are clickable**, and selecting one shows its detail.
+- **Opening view over the Bering Sea**, so St. Louis (45 flights) and Beijing
+  (16) are both on the visible face with the arc between them. A view centered
+  on the US would hide the Asia half of the history.
+- **Land is a tint made from the two tokens**, a fill with no coastline
+  stroke. No dot pattern: dots shimmer while dragging and are slow to redraw.
+  See the Palette exception.
+- **Every flight shows its exact date**, and the page also groups by month and
+  year.
+- **Phones:** a horizontal drag turns the globe and a vertical swipe scrolls
+  the page. To be refined later.
+- **Stats go beyond Flighty's**: most-flown aircraft, routes, airports, and
+  things only a personal log can say (38 of the 58 flights with a recorded
+  seat type were window seats, which backs the intro's window-seat sentence).
+
+### Data and privacy (non-negotiable)
+
+- The Flighty CSV export is the source. **The raw CSV is never committed**: it
+  carries booking references (PNR), seats, tail numbers, and notes. It is
+  ignored in `.gitignore`.
+- A script turns it into a published data file with **past flights only** and
+  only the fields the page shows: date, from, to, airline, aircraft type.
+  **Never publish a future flight.** The export dated 2 November 2026 held two.
+- Every number on the page is computed from that file, never typed by hand.
+  Distances are our own great-circle totals; do not copy Flighty's figure.
+- Airport coordinates come from OurAirports (public domain), since the export
+  holds only IATA codes.
+- Checked against the 2 November 2026 export: 83 past flights, 34 airports,
+  14 airlines, 22 aircraft types, 47 distinct routes. This matches Flighty.
+
+### Open
+
+- **The layout of the page**: wait for Jiaming's drawings.
+- **Rendering**: Jiaming leans toward a real 3D globe (Three.js or similar).
+  The alternative is a D3 orthographic projection in SVG. The trade-off to
+  weigh: SVG fills can use the CSS tokens and fade with the theme on `--fade`
+  for free, while WebGL must read the tokens in JS and animate its own color
+  change to match. Either can work; decide with the layout.
+- **The way in from the home page.** Proposed: a link inside the intro's
+  window-seat sentence (preferred), a Flights entry in Projects, or a small
+  home page section. A pill button would be the only one of its kind on the
+  page.
+
+### What carries over, and what is open to change
+
+The flights page is the place for something more ambitious than the home page,
+so the home page's rules do not all transfer one to one. Use this split:
+
+- **Fixed on both pages:** the two tokens (plus the globe tint), Newsreader,
+  the copy rules, links off-site in a new tab, `prefers-reduced-motion`, and
+  checkable numbers.
+- **Open to rethink on the flights page, with Jiaming:** the column width, the
+  type scale beyond the body floor, how detail is shown on selection, and the
+  amount of interaction and motion. "No animated backgrounds" still means the
+  globe does not spin by itself to decorate the page; motion that answers
+  something the visitor did is fine.
+
+These rules record past decisions, not a ceiling. When a new idea for this page
+conflicts with one of them, say which rule and why it exists, then let Jiaming
+decide.
 
 ## Files
 

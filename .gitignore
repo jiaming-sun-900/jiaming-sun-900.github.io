@@ -1,3 +1,5 @@
 .DS_Store
 anaconda_projects/
 og@2x.png
+# Raw Flighty exports: carry booking references, seats, and future flights
+*.csv
